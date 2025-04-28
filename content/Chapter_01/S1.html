@@ -1,0 +1,879 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data 188, Spring 2024 &#8212; Data 188 Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/Chapter_01/S1';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data 188 Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Data 188
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference external" href="http://prob140.org">Course Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../To_the_Student.html">To the  Student</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://prob140.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/shahzarrizvi/data188-book&urlpath=tree/data188-book/content/Chapter_01/S1.ipynb&branch=gh-pages" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/Chapter_01/S1.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data 188, Spring 2024</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data 188, Spring 2024</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-seminar-notes">Week 1 Seminar Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">A. Adhikari</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-confidence-intervals">Warm-Up: Confidence Intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-confidence-intervals">Other Confidence Intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-exponential-rate">Estimating the Exponential Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-hat-lambda">Distribution of <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-delta-method">The Delta Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-normal">Why Normal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-normal">Which Normal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-lambda">Confidence Interval for <span class="math notranslate nohighlight">\(\lambda\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-of-the-approximations">Accuracy of the Approximations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-week">Next Week</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">datascience</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">prob140</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">)</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datascience</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">prob140</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">stats</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">prob140</span><span class="o">/</span><span class="fm">__init__</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.version</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.rebinding</span><span class="w"> </span><span class="kn">import</span> <span class="n">Table</span><span class="p">,</span> <span class="n">Plot</span><span class="p">,</span> <span class="n">Plots</span><span class="p">,</span> <span class="n">JointDistribution</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.markov_chains</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkovChain</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.single_variable</span><span class="w"> </span><span class="kn">import</span> <span class="n">emp_dist</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">prob140</span><span class="o">/</span><span class="n">rebinding</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">5</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.markov_chains</span><span class="w"> </span><span class="kn">import</span> <span class="n">MarkovChain</span><span class="p">,</span> <span class="n">to_markov_chain</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.symbolic_math</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="ne">----&gt; </span><span class="mi">5</span> <span class="kn">from</span><span class="w"> </span><span class="nn">.plots</span><span class="w"> </span><span class="kn">import</span> <span class="n">Plot_continuous</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="kn">from</span><span class="w"> </span><span class="nn">datascience</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">def</span><span class="w"> </span><span class="nf">domain</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">):</span>
+
+<span class="n">File</span> <span class="o">~/</span><span class="n">miniconda3</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">python3</span><span class="mf">.9</span><span class="o">/</span><span class="n">site</span><span class="o">-</span><span class="n">packages</span><span class="o">/</span><span class="n">prob140</span><span class="o">/</span><span class="n">plots</span><span class="o">.</span><span class="n">py</span><span class="p">:</span><span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">widgets</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">from</span><span class="w"> </span><span class="nn">ipywidgets</span><span class="w"> </span><span class="kn">import</span> <span class="n">interact</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+
+<span class="ne">ModuleNotFoundError</span>: No module named &#39;ipywidgets&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<section id="data-188-spring-2024">
+<h1>Data 188, Spring 2024<a class="headerlink" href="#data-188-spring-2024" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="week-1-seminar-notes">
+<h1>Week 1 Seminar Notes<a class="headerlink" href="#week-1-seminar-notes" title="Link to this heading">#</a></h1>
+<section id="a-adhikari">
+<h2>A. Adhikari<a class="headerlink" href="#a-adhikari" title="Link to this heading">#</a></h2>
+</section>
+<section id="warm-up-confidence-intervals">
+<h2>Warm-Up: Confidence Intervals<a class="headerlink" href="#warm-up-confidence-intervals" title="Link to this heading">#</a></h2>
+<p>We start with a review of Data 140 content. Let <span class="math notranslate nohighlight">\(X_1, X_2, \ldots, X_n\)</span> be i.i.d. with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Let <span class="math notranslate nohighlight">\(\bar{X}_n = \frac{1}{n}\sum_{i=1}^n X_i\)</span> be the sample mean.</p>
+<p>Then <span class="math notranslate nohighlight">\(E(\bar{X}_n) = \mu\)</span> and <span class="math notranslate nohighlight">\(SD(\bar{X}_n) = \sigma/\sqrt{n}\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>. If <span class="math notranslate nohighlight">\(n\)</span> is large, then the distribution of <span class="math notranslate nohighlight">\(\bar{X_n}\)</span> is approximately normal by the CLT. This allows us to construct confidence intervals for the population mean.</p>
+<p>Today we’ll stick to 95% as the confidence level. To change levels and to read textbooks, it’s worth going over some standard notation.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> is used for error probabilities e.g. <span class="math notranslate nohighlight">\(0.05\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(1 - \alpha\)</span> is the coverage probability, e.g. <span class="math notranslate nohighlight">\(0.95\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(100(1-\alpha)\%\)</span> is the confidence level expressed as a percent, e.g. 95%.</p></li>
+<li><p><span class="math notranslate nohighlight">\(z_{\alpha/2}\)</span> is the <em>upper</em> <span class="math notranslate nohighlight">\(100(\alpha/2)\)</span> percent point of the standard normal distribution, that is, the point that has probability <span class="math notranslate nohighlight">\(\alpha/2\)</span> to the <em>right</em>, e.g. <span class="math notranslate nohighlight">\(z_{0.025} = 2\)</span> or <span class="math notranslate nohighlight">\(1.96\)</span> if you prefer.</p></li>
+</ul>
+<p>By the CLT,</p>
+<div class="math notranslate nohighlight">
+\[
+P(\mu - 2\sigma/\sqrt{n} &lt; \bar{X}_n &lt; \mu + 2\sigma/\sqrt{n}) \approx 0.95
+\]</div>
+<p>That is, the random sample mean falls in the fixed interval <span class="math notranslate nohighlight">\(\mu \pm 2\sigma/\sqrt{n}\)</span> with chance about 0.95.</p>
+<p>By manipulating the two inequalities above, this is the same as</p>
+<div class="math notranslate nohighlight">
+\[
+P(\bar{X}_n - 2\sigma/\sqrt{n} &lt; \mu &lt; \bar{X}_n + 2\sigma/\sqrt{n}) \approx 0.95
+\]</div>
+<p>That is, the random interval <span class="math notranslate nohighlight">\(\bar{X}_n \pm 2\sigma/\sqrt{n}\)</span> contains the fixed parameter <span class="math notranslate nohighlight">\(\mu\)</span> with chance about 0.95 and is called an approximate 95% confidence interval for <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<p>The approximation is in the use of the CLT. The distribution of the sample mean is only approximately normal. If <span class="math notranslate nohighlight">\(\sigma\)</span> is unknown and has to be replaced by an estimate, that’s another source of approximation. There’s also an approximation in the decimal value of <span class="math notranslate nohighlight">\(z\)</span> but that tends to be minor relative to everything else.</p>
+<section id="other-confidence-intervals">
+<h3>Other Confidence Intervals<a class="headerlink" href="#other-confidence-intervals" title="Link to this heading">#</a></h3>
+<p>We happened to start the construction with an interval that was symmetric about the sample mean, but the construction didn’t depend on the symmetry. We could just as well have said</p>
+<div class="math notranslate nohighlight">
+\[
+P(\bar{X_n} &lt; \mu + 1.65\sigma/\sqrt{n}) \approx 0.95 \iff P(\mu &gt; \bar{X_n} - 1.65\sigma/\sqrt{n}) \approx 0.95
+\]</div>
+<p>to get a <em>one-sided</em> 95% confidence interval. We have used <span class="math notranslate nohighlight">\(z_{0.05} = 1.65\)</span>.</p>
+<p>Or we could have started with a bounded asymmetric interval that has chance about 0.95 to get an asymmetric bounded confidence interval. There are infinitely many confidence intervals of a given level.</p>
+<p>You can construct confidence intervals in the same way, using percentiles or the inverse cdf, even if the distribution of the statistic isn’t normal. But you do need to know the approximate distribution of the statistic, either analytically or empirically.</p>
+<p><strong>Notes</strong></p>
+<ul class="simple">
+<li><p>If the goal is to know how big <span class="math notranslate nohighlight">\(\mu\)</span> is, then shorter intervals are better. Since the normal is symmetric and unimodal, the symmetric interval is shortest at a fixed confidence level.</p></li>
+<li><p>If you are simply interested in whether or not <span class="math notranslate nohighlight">\(\mu\)</span> crosses a threshold, e.g. if the mean quality of a product meets standards, then a one-sided interval might be enough.</p></li>
+<li><p>Since the distribution of <span class="math notranslate nohighlight">\(\bar{X}_n\)</span> is symmetric about <span class="math notranslate nohighlight">\(\mu\)</span>, it’s not clear how a bounded asymmetric interval would be more useful than a symmetric one.</p></li>
+<li><p>“Equal tail” intervals are convenient for calculation and interpretation.</p></li>
+<li><p>If you want to estimate a monotone function of the parameter, e.g. you have a confidence interval for the variance but you decide to estimate the SD instead, then intervals that are based on percentiles convert in the obvious way. If <span class="math notranslate nohighlight">\((10, 15)\)</span> is an equal-tail 95% confidence interval for the variance, then <span class="math notranslate nohighlight">\((\sqrt{10}, \sqrt{15})\)</span> is an equal-tail 95% confidence interval for the SD.</p></li>
+</ul>
+</section>
+<section id="estimating-the-exponential-rate">
+<h3>Estimating the Exponential Rate<a class="headerlink" href="#estimating-the-exponential-rate" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(X_1, X_2, \ldots, X_n\)</span> be i.i.d. exponential with rate <span class="math notranslate nohighlight">\(\lambda\)</span>. In Data 140 homework you showed that the MLE of <span class="math notranslate nohighlight">\(\lambda\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\lambda} ~ = ~ 1/\bar{X}_n
+\]</div>
+<p><strong>Further Terminology:</strong>
+Let <span class="math notranslate nohighlight">\(X\)</span> have the exponential <span class="math notranslate nohighlight">\((\lambda)\)</span> distribution. Recall that <span class="math notranslate nohighlight">\(E(X)\)</span> is called the <em>first moment</em> of the distribution, or the <em>first population moment</em>. Analogously, the statistic <span class="math notranslate nohighlight">\(\bar{X_n}\)</span> is called the <em>first sample moment</em>.</p>
+<p>You know that for large <span class="math notranslate nohighlight">\(n\)</span>, the first sample moment is a good estimator of the first moment. In our example, the first moment is <span class="math notranslate nohighlight">\(E(X) = 1/\lambda\)</span>, so <span class="math notranslate nohighlight">\(\lambda = 1/E(X)\)</span>. The estimator <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> simply replaces the population moment on the right hand side with the corresponding sample moment. This is an example of the <em>method of moments</em> for estimation.</p>
+<p><span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> is also called a <em>plug-in estimator</em> of <span class="math notranslate nohighlight">\(\lambda\)</span> based on <span class="math notranslate nohighlight">\(\bar{X}_n\)</span>.</p>
+</section>
+<section id="distribution-of-hat-lambda">
+<h3>Distribution of <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span><a class="headerlink" href="#distribution-of-hat-lambda" title="Link to this heading">#</a></h3>
+<p>To construct a confidence interval for <span class="math notranslate nohighlight">\(\lambda\)</span>, we need the distribution of the estimate <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>.</p>
+<p>In this example, you know that the distribution of <span class="math notranslate nohighlight">\(\bar{X_n}\)</span> is gamma <span class="math notranslate nohighlight">\((n, n\lambda)\)</span> and can use that and the change of variable method to find the distribution of <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>. But for more general applicability, it’s useful to find methods that don’t rely so much on the exponential setting.</p>
+<p>Assume that <span class="math notranslate nohighlight">\(n\)</span> is large. The distribution of <span class="math notranslate nohighlight">\(\bar{X}_n\)</span> is approximately normal by the CLT. Since <span class="math notranslate nohighlight">\(\hat{\lambda} = 1/\bar{X}_n\)</span> it’s worth examining the arithmetic inverse of a normal variable. You used change of variable for this in 140, but let’s just simulate.</p>
+<p>Here is the empirical distribution of a standard normal variable <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Z and 1/Z</span>
+<span class="n">reps</span> <span class="o">=</span> <span class="mi">20000</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">reps</span><span class="p">)</span>
+<span class="n">t1</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">,</span>
+                        <span class="s1">&#39;1/Z&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/00396064bb87d996bdf3a70b0a05a3251bce73a38932815eaf12b6243943cac5.png" src="../../_images/00396064bb87d996bdf3a70b0a05a3251bce73a38932815eaf12b6243943cac5.png" />
+</div>
+</div>
+<p>No surprises there. Here is the empirical distribution of <span class="math notranslate nohighlight">\(1/Z\)</span> based on the same simulated values of <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;1/Z&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0dca9ccb8a1da354dd1ea045c2a3ba86fa9a33a16cd8e988c6a61717584d1201.png" src="../../_images/0dca9ccb8a1da354dd1ea045c2a3ba86fa9a33a16cd8e988c6a61717584d1201.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">z</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">z</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(-12096.47710609047, 113218.9175662271, 852.8584541703782)
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s definitely not normal. Zooming in shows what’s happening near <span class="math notranslate nohighlight">\(0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;1/Z&#39;</span><span class="p">,</span> <span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/cf30438dc2dc6917e7be78aee6fbdf0b886dcb8bad5bd4f4ec1d716d24094c0b.png" src="../../_images/cf30438dc2dc6917e7be78aee6fbdf0b886dcb8bad5bd4f4ec1d716d24094c0b.png" />
+</div>
+</div>
+<p>But something interesting happens when we simulate the distribution of <span class="math notranslate nohighlight">\(\hat{\lambda} = 1/\bar{X}_n\)</span>. In the simulation, <span class="math notranslate nohighlight">\(\lambda = 0.5\)</span> and the sample size is <span class="math notranslate nohighlight">\(n=400\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">xbar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">reps</span><span class="p">):</span>
+    <span class="n">xbar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xbar</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">stats</span><span class="o">.</span><span class="n">expon</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">n</span><span class="p">,</span> <span class="n">scale</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">lam</span><span class="p">)))</span>
+    
+<span class="n">t2</span> <span class="o">=</span> <span class="n">Table</span><span class="p">()</span><span class="o">.</span><span class="n">with_columns</span><span class="p">(</span><span class="s1">&#39;Xbar&#39;</span><span class="p">,</span> <span class="n">xbar</span><span class="p">,</span>
+                        <span class="s1">&#39;1/Xbar&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The distribution of <span class="math notranslate nohighlight">\(\bar{X}_n\)</span> is roughly normal as you expect.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;Xbar&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/259804e232ce98d1ceb08883108454239b1ad70c1aae3f1783ba161df1fcaf38.png" src="../../_images/259804e232ce98d1ceb08883108454239b1ad70c1aae3f1783ba161df1fcaf38.png" />
+</div>
+</div>
+<p>The distribution of <span class="math notranslate nohighlight">\(\hat{\lambda} = 1/\bar{X_n}\)</span> is …</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t2</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="s1">&#39;1/Xbar&#39;</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="mi">25</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/4380dd7f03db2e5bb12bddde5dba65e69e8a976a96995463c938cf566404f533.png" src="../../_images/4380dd7f03db2e5bb12bddde5dba65e69e8a976a96995463c938cf566404f533.png" />
+</div>
+</div>
+<p>… also approximately normal.</p>
+<p>That’s unexpected. Let’s check that the mean and SD make sense compared to the values on the horizontal axis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5009331091620624, 0.02517791316703597)
+</pre></div>
+</div>
+</div>
+</div>
+<p>This mean and SD fit well with the normal shape of the histogram. But why is the shape normal?</p>
+</section>
+</section>
+<section id="the-delta-method">
+<h2>The Delta Method<a class="headerlink" href="#the-delta-method" title="Link to this heading">#</a></h2>
+<p>This general method will help us understand the approximate normality of <span class="math notranslate nohighlight">\(1/\bar{X}_n\)</span> and find the approximate mean and variance.</p>
+<section id="why-normal">
+<h3>Why Normal?<a class="headerlink" href="#why-normal" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(g\)</span> be a smooth non-linear function and let <span class="math notranslate nohighlight">\(Y\)</span> be an approximately normal random variable with a small SD. In our example, <span class="math notranslate nohighlight">\(g(\theta) = 1/\theta\)</span> and <span class="math notranslate nohighlight">\(Y = \bar{X}_n\)</span>. We have assumed that <span class="math notranslate nohighlight">\(n\)</span> is large, so <span class="math notranslate nohighlight">\(SD(Y)\)</span> is small.</p>
+<p>We are interested in the distribution of <span class="math notranslate nohighlight">\(g(Y)\)</span>. Start with a familiar fact:</p>
+<ul class="simple">
+<li><p>A linear function of a normal variable is normal.</p></li>
+</ul>
+<p>It’s easy to believe an initial approximation:</p>
+<ul class="simple">
+<li><p>A linear function of an approximately normal variable is approximately normal.</p></li>
+</ul>
+<p>If <span class="math notranslate nohighlight">\(g\)</span> were linear, we’d be done. But <span class="math notranslate nohighlight">\(g\)</span> isn’t linear. So we need one more step.</p>
+<p>The crucial observation is that <span class="math notranslate nohighlight">\(Y\)</span> isn’t just any normal – it’s a skinny normal. Its SD is small, so almost all the probability is concentrated in a small interval three or four SDs on either side of the mean. To understand the distribution of <span class="math notranslate nohighlight">\(g(Y)\)</span>, we have to examine the behavior of <span class="math notranslate nohighlight">\(g\)</span> on this small interval. The rest of the real line won’t matter much.</p>
+<p>We have assumed <span class="math notranslate nohighlight">\(g\)</span> is smooth. Taylor’s theorem tells us that to a first approximation, <span class="math notranslate nohighlight">\(g\)</span> is approximately linear over any small interval. This gives us a normal approximation to the distribution of <span class="math notranslate nohighlight">\(g(Y)\)</span>, because:</p>
+<ul class="simple">
+<li><p>An approximately linear function of an approximately normal variable is approximately normal.</p></li>
+</ul>
+<p>In summary, if <span class="math notranslate nohighlight">\(g\)</span> is a smooth function and <span class="math notranslate nohighlight">\(Y\)</span> is an approximately normal variable with a small SD, then <span class="math notranslate nohighlight">\(g(Y)\)</span> is approximately normal.</p>
+<p>There’s a lot of hand-waving in this discussion. But the reasoning should be compelling and the simulation bears it out. For a more detailed treatment, take a graduate class.</p>
+</section>
+<section id="which-normal">
+<h3>Which Normal?<a class="headerlink" href="#which-normal" title="Link to this heading">#</a></h3>
+<p>To completely identify the normal approximation to the distribution of <span class="math notranslate nohighlight">\(g(Y)\)</span>, we need the mean and variance. The delta method uses a first-order Taylor expansion to identify the linear function that approximates <span class="math notranslate nohighlight">\(g\)</span> near the point <span class="math notranslate nohighlight">\(\theta_0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+g(\theta) ~ \approx ~ g(\theta_0) + (\theta - \theta_0)g'(\theta_0)
+\]</div>
+<p>We are assuming <span class="math notranslate nohighlight">\(\theta\)</span> is close to <span class="math notranslate nohighlight">\(\theta_0\)</span> and, <span class="math notranslate nohighlight">\(g\)</span> is smooth with a continuous second derivative, and <span class="math notranslate nohighlight">\(g'(\theta_0) \neq 0\)</span>.</p>
+<p>So the Taylor expansion of <span class="math notranslate nohighlight">\(g(Y)\)</span> around <span class="math notranslate nohighlight">\(\theta_0 = E(Y)\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[
+g(Y) ~ \approx ~ g(E(Y)) + (Y - E(Y))g'(E(Y))
+\]</div>
+<p>Take expectations on both sides:</p>
+<div class="math notranslate nohighlight">
+\[
+E(g(Y)) ~ \approx ~ g(E(Y)) + E(Y - E(Y))g'(E(Y)) ~ = ~ g(E(Y))
+\]</div>
+<p>because <span class="math notranslate nohighlight">\(E(Y - E(Y)) = 0\)</span>.</p>
+<p>Take variances on both sides of the Taylor approximation of <span class="math notranslate nohighlight">\(g(Y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+Var(g(Y)) ~ \approx ~ Var(Y - E(Y))(g'(E(Y)))^2 ~ = ~ Var(Y)(g'(E(Y)))^2
+\]</div>
+</section>
+<section id="summary">
+<h3>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(g\)</span> be smooth and let <span class="math notranslate nohighlight">\(Y\)</span> be normal with a small SD. Then the distribution of <span class="math notranslate nohighlight">\(g(Y)\)</span> can be approximated by the normal distribution with mean <span class="math notranslate nohighlight">\(g(E(Y))\)</span> and variance <span class="math notranslate nohighlight">\(Var(Y)(g'E(Y))^2\)</span>.</p>
+</section>
+<section id="confidence-interval-for-lambda">
+<h3>Confidence Interval for <span class="math notranslate nohighlight">\(\lambda\)</span><a class="headerlink" href="#confidence-interval-for-lambda" title="Link to this heading">#</a></h3>
+<p>We can now construct a confidence interval for the exponential rate.</p>
+<p>In our example, <span class="math notranslate nohighlight">\(g(\theta) = 1/\theta\)</span> and <span class="math notranslate nohighlight">\(Y = \bar{X}_n\)</span>. The MLE of <span class="math notranslate nohighlight">\(\lambda\)</span> is <span class="math notranslate nohighlight">\(\hat{\lambda} = g(\bar{X}_n)\)</span>.</p>
+<p>Since <span class="math notranslate nohighlight">\(E(\bar{X_n}) = 1/\lambda\)</span>, the delta method says</p>
+<div class="math notranslate nohighlight">
+\[
+E(\hat{\lambda}) ~ = ~ E(g(\bar{X_n})) ~ \approx ~ g(E(\bar{X_n}) ~ = ~ \lambda
+\]</div>
+<p>In other words, <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> is almost unbiased, as you showed more precisely in your 140 homework by calculating the mean exactly and showing that it is a slightly larger than <span class="math notranslate nohighlight">\(\lambda\)</span>.</p>
+<p>For the variance, use <span class="math notranslate nohighlight">\(g'(\theta) = -1/\theta^2\)</span> and <span class="math notranslate nohighlight">\(Var(\bar{X_n}) = \displaystyle{\frac{1/\lambda^2}{n}}\)</span>. By the delta method,</p>
+<div class="math notranslate nohighlight">
+\[
+Var(\hat{\lambda}) ~ \approx ~ Var(\bar{X_n})(g'(1/\lambda))^2 ~ = ~ \frac{1/\lambda^2}{n} \cdot \lambda^4 ~ = ~ \frac{\lambda^2}{n}
+\]</div>
+<p>For <span class="math notranslate nohighlight">\(n = 400\)</span> and <span class="math notranslate nohighlight">\(\lambda = 0.5\)</span>, this gives <span class="math notranslate nohighlight">\(SD(\hat{\lambda}) \approx 0.025\)</span> which agrees with our simulation.</p>
+<p>An approximate 95% confidence interval for <span class="math notranslate nohighlight">\(\lambda\)</span> is given by <span class="math notranslate nohighlight">\(\hat{\lambda} \pm 2\hat{\lambda}/\sqrt{n}\)</span>.</p>
+<p>You should identify all the approximations in that expression. For example, the SD <span class="math notranslate nohighlight">\(\lambda/\sqrt{n}\)</span> is being approximated <span class="math notranslate nohighlight">\(\hat{\lambda}/\sqrt{n}\)</span>.</p>
+<p>For reference, here are the empirical mean and SD based on the simulated <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>. We saw these values earlier.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5009331091620624, 0.02517791316703597)
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here are the approximate expectation and SD of <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> based on the delta method:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lam</span><span class="p">,</span> <span class="p">((</span><span class="n">lam</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="n">n</span><span class="p">)</span><span class="o">**</span><span class="mf">0.5</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5, 0.025)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="accuracy-of-the-approximations">
+<h3>Accuracy of the Approximations<a class="headerlink" href="#accuracy-of-the-approximations" title="Link to this heading">#</a></h3>
+<p>We’ve given good reasons for all these approximations but we haven’t cranked out the detailed estimates that show that the approximations are close to the exact values of <span class="math notranslate nohighlight">\(E(\hat{\lambda})\)</span> and <span class="math notranslate nohighlight">\(Var(\hat{\lambda})\)</span>. In this example, however, we have the good fortune of being able to check how good “<span class="math notranslate nohighlight">\(\approx\)</span>” is for the mean and variance.</p>
+<p>By gamma sum and scaling facts, you know that <span class="math notranslate nohighlight">\(\bar{X}_n\)</span> has the gamma <span class="math notranslate nohighlight">\((n, n\lambda)\)</span> distribution. In 140 homework you used this and the gamma integral to show that <span class="math notranslate nohighlight">\(E(\hat{\lambda}) = \frac{n}{n-1}\lambda\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>. For large <span class="math notranslate nohighlight">\(n\)</span> this is pretty close to <span class="math notranslate nohighlight">\(\lambda\)</span> which is our delta method approximation.</p>
+<p>An analogous calculation, starting with the expected square, gives the exact value of <span class="math notranslate nohighlight">\(Var(\hat{\lambda})\)</span> for all <span class="math notranslate nohighlight">\(n\)</span> as well. You should get</p>
+<div class="math notranslate nohighlight">
+\[ 
+Var(\hat{\lambda}) = \frac{n^2 \lambda ^2}{(n-1)^2(n-2)}
+\]</div>
+<p>For large <span class="math notranslate nohighlight">\(n\)</span>, this is almost indistinguishable from the delta method approximation <span class="math notranslate nohighlight">\(\displaystyle{\frac{\lambda^2}{n}}\)</span>.</p>
+<p>The parameters in our simulation are <span class="math notranslate nohighlight">\(\lambda = 0.5\)</span> and <span class="math notranslate nohighlight">\(n=400\)</span>. The cell below shows the exact <span class="math notranslate nohighlight">\(E(\hat{\lambda})\)</span> and <span class="math notranslate nohighlight">\(SD(\hat{\lambda})\)</span> and their delta method approximations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># exact mean, approx mean, exact SD, approx SD</span>
+<span class="p">(</span><span class="n">n</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span><span class="o">*</span><span class="n">lam</span><span class="p">,</span> <span class="n">lam</span><span class="p">,</span> <span class="p">(</span> <span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">lam</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="p">(((</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">2</span><span class="p">))</span> <span class="p">)</span><span class="o">**</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">lam</span><span class="o">/</span><span class="p">(</span><span class="n">n</span><span class="o">**</span><span class="mf">0.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5012531328320802, 0.5, 0.02512554922892659, 0.025)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Once again, here are the mean and SD of the simulated <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span>. These empirical values are close to the corresponding exact value as well as the delta method approximation.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">xbar</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.5012449517299853, 0.0250587631293048)
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="next-week">
+<h3>Next Week<a class="headerlink" href="#next-week" title="Link to this heading">#</a></h3>
+<p>For large <span class="math notranslate nohighlight">\(n\)</span>, we found that in this example the distribution of the MLE <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> is roughly normal, and we were able to see that the estimator is asympotically unbiased. We were also able to find its variance and see that it gets small as the sample size increases.</p>
+<p>All of these calculations made heavy use of the fact that the sample is drawn from an exponential distribution. But in fact the results in the previous para have not much to do with the underlying exponential distribution; they have far more to do with the fact that <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> is the MLE of <span class="math notranslate nohighlight">\(\lambda\)</span>. That’s the topic of the next seminar.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/Chapter_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data 188, Spring 2024</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-1-seminar-notes">Week 1 Seminar Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">A. Adhikari</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#warm-up-confidence-intervals">Warm-Up: Confidence Intervals</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#other-confidence-intervals">Other Confidence Intervals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#estimating-the-exponential-rate">Estimating the Exponential Rate</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#distribution-of-hat-lambda">Distribution of <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-delta-method">The Delta Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#why-normal">Why Normal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#which-normal">Which Normal?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">Summary</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#confidence-interval-for-lambda">Confidence Interval for <span class="math notranslate nohighlight">\(\lambda\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy-of-the-approximations">Accuracy of the Approximations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#next-week">Next Week</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ani Adhikari
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
