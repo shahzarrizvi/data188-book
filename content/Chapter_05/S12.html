@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Data 188 Spring 2024 &#8212; Data 188 Textbook</title>
+    <title>11. Data 188 Spring 2024 &#8212; Data 188 Textbook</title>
   
   
   
@@ -62,6 +62,8 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/Chapter_05/S12';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="../Chapter_06/Bayesian_Estimation.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="Multiple_Hypotheses.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,8 +126,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -175,10 +175,39 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="http://prob140.org">Course Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../To_the_Student.html">To the  Student</a></li>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_01/00_Maximum_Likelihood.html">1. Maximum Likelihood</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/01_The_Exponential_Rate.html">1.1. The Exponential Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/02_Asymptotic_Normality.html">1.2. Asymptotic Normality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/04_Modes_of_Convergence.html">1.3. Modes of Convergence</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_02/00_The_Bootstrap.html">2. The Bootstrap</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/01_Bias_and_Variance.html">2.1. Bias and Variance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/02_Nonparametric_Bootstrap.html">2.2. Nonparametric Bootstrap</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_03/00_Hypothesis_Testing.html">3. Hypothesis Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_03/01_Transformations_of_Joint_Densities.html">3.1. Transformations of Joint Densities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_03/02_Testing_Hypotheses.html">3.2. Testing Hypotheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_03/03_Duality.html">3.3. Data 188, Spring 2024</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_04/S8.html">4. Data 188, Spring 2024</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_04/S9.html">6. Data 188 Spring 2024</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_04/S11.html">8. Data 188 Spring 2024</a></li>
+
+
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">11. Data 188 Spring 2024</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_06/S13.html">14. Data 188 Spring 2024</a></li>
+
+
 </ul>
 
     </div>
@@ -358,22 +387,22 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data 188 Spring 2024</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-12-seminar-notes">Week 12 Seminar Notes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">A. Adhikari</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Data 188 Spring 2024</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-12-seminar-notes">12. Week 12 Seminar Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">12.1. A. Adhikari</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">Multiple Comparisons</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonferroni-correction-method">Bonferroni Correction Method</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-discoveries">False Discoveries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-bad-is-bonferroni-s-bound">How bad is Bonferroni’s bound?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">13. Multiple Comparisons</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">13.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonferroni-correction-method">13.2. Bonferroni Correction Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-discoveries">13.2.1. False Discoveries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-bad-is-bonferroni-s-bound">13.2.2. How bad is Bonferroni’s bound?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benjaminihochberg-procedure">Benjamini–Hochberg Procedure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-and-notation">Setup and Notation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-h-procedure">B-H Procedure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-fdr-control">Proof of <span class="math notranslate nohighlight">\(FDR\)</span> Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benjaminihochberg-procedure">13.3. Benjamini–Hochberg Procedure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-and-notation">13.3.1. Setup and Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-h-procedure">13.3.2. B-H Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-fdr-control">13.3.3. Proof of <span class="math notranslate nohighlight">\(FDR\)</span> Control</a></li>
 </ul>
 </li>
 </ul>
@@ -450,19 +479,19 @@ document.write(`
 </div>
 </div>
 <section id="data-188-spring-2024">
-<h1>Data 188 Spring 2024<a class="headerlink" href="#data-188-spring-2024" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">11. </span>Data 188 Spring 2024<a class="headerlink" href="#data-188-spring-2024" title="Link to this heading">#</a></h1>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="week-12-seminar-notes">
-<h1>Week 12 Seminar Notes<a class="headerlink" href="#week-12-seminar-notes" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">12. </span>Week 12 Seminar Notes<a class="headerlink" href="#week-12-seminar-notes" title="Link to this heading">#</a></h1>
 <section id="a-adhikari">
-<h2>A. Adhikari<a class="headerlink" href="#a-adhikari" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">12.1. </span>A. Adhikari<a class="headerlink" href="#a-adhikari" title="Link to this heading">#</a></h2>
 <p><strong>with Kate Gwimm, Vincent He (Fall 2022)</strong></p>
 </section>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="multiple-comparisons">
-<h1>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">13. </span>Multiple Comparisons<a class="headerlink" href="#multiple-comparisons" title="Link to this heading">#</a></h1>
 <section id="introduction">
-<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.1. </span>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
 <p>Last time, we explored the question: Given numerical data in <span class="math notranslate nohighlight">\(G\)</span> groupswith sample size <span class="math notranslate nohighlight">\(n_{g}\)</span> in Group <span class="math notranslate nohighlight">\(g\)</span>, is there a difference in distribution between the groups?</p>
 <p>In the one-way ANOVA model, the null hypothesis was that all the underlying group means are equal:</p>
 <div class="math notranslate nohighlight">
@@ -470,7 +499,7 @@ document.write(`
 <p>This is sometimes called the <em>global null hypothesis</em> to distinguish it from hypotheses that say only that some pair or subset of the means are equal.</p>
 </section>
 <section id="bonferroni-correction-method">
-<h2>Bonferroni Correction Method<a class="headerlink" href="#bonferroni-correction-method" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.2. </span>Bonferroni Correction Method<a class="headerlink" href="#bonferroni-correction-method" title="Link to this heading">#</a></h2>
 <p>Last time we developed an <span class="math notranslate nohighlight">\(F\)</span>-test for <span class="math notranslate nohighlight">\(H_0\)</span> under some normality and independence assumptions. Another approach would be to instead do <span class="math notranslate nohighlight">\({G \choose 2}\)</span> comparisons, or tests:
 $<span class="math notranslate nohighlight">\(
 \begin{align*}
@@ -483,7 +512,7 @@ H_0^{G \choose 2}: ~&amp; \mu_{G-1} = \mu_{G}
 <p>We call <span class="math notranslate nohighlight">\(H^{*}_{0}\)</span> the “global null” because <span class="math notranslate nohighlight">\(H^{*}_{0}\)</span> is the same as “all the <span class="math notranslate nohighlight">\(H^{i}_{0}\)</span>’s are true”.</p>
 <p>The next natural question is, if we run each test at a <span class="math notranslate nohighlight">\(5\%\)</span> level (resulting in <span class="math notranslate nohighlight">\({G \choose 2}\)</span> <span class="math notranslate nohighlight">\(p\)</span> values), then what is our overall error rate?</p>
 <section id="false-discoveries">
-<h3>False Discoveries<a class="headerlink" href="#false-discoveries" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.1. </span>False Discoveries<a class="headerlink" href="#false-discoveries" title="Link to this heading">#</a></h3>
 <p>If a test concludes the alternative when in fact the null is true, we have a <em>false discovery</em>.</p>
 <p>Thus the level of the test <span class="math notranslate nohighlight">\(i\)</span> is the chance that the test makes a false discovery:</p>
 <div class="math notranslate nohighlight">
@@ -509,7 +538,7 @@ FWER ~=~ P_{{H}^{*}_0}(\bigcup_{i=1}^m \text{ reject } H^{i}_{0})
 <p>The pros of this method are that it’s easy to do and requires no assumptions about our model. The con is that when <span class="math notranslate nohighlight">\(m\)</span> is very big, <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\)</span> is very small. Having a small cutoff for our p-values means that our rejection region is small, so the power of each test will be small. The tests will be extremely conservative.</p>
 </section>
 <section id="how-bad-is-bonferroni-s-bound">
-<h3>How bad is Bonferroni’s bound?<a class="headerlink" href="#how-bad-is-bonferroni-s-bound" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.2.2. </span>How bad is Bonferroni’s bound?<a class="headerlink" href="#how-bad-is-bonferroni-s-bound" title="Link to this heading">#</a></h3>
 <p>So how conservative is each test? Let’s explore the closeness of the upper bound.</p>
 <p>Suppose we set the level of each test to <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\)</span> and our tests are independent. Then</p>
 <div class="math notranslate nohighlight">
@@ -526,7 +555,7 @@ $<span class="math notranslate nohighlight">\(FWER ~ = ~ 1 - (1 - \frac{\alpha}{
 </section>
 </section>
 <section id="benjaminihochberg-procedure">
-<h2>Benjamini–Hochberg Procedure<a class="headerlink" href="#benjaminihochberg-procedure" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">13.3. </span>Benjamini–Hochberg Procedure<a class="headerlink" href="#benjaminihochberg-procedure" title="Link to this heading">#</a></h2>
 <p>In some contexts, such as bioinformatics, the number of tests <span class="math notranslate nohighlight">\(m\)</span> is sometimes huge. The Bonferroni method might lead to no discoveries at all. What if we were prepared to accept some number of false discoveries? Benjamini and Hochberg provided a procedure that is a compromise between performing each test and level <span class="math notranslate nohighlight">\(\alpha\)</span> and performing it at level <span class="math notranslate nohighlight">\(\alpha/m\)</span>.</p>
 <p>Today we will just describe the procedure. In the next session we will look at exactly what it is controlling.</p>
 <p>Assume we perform <span class="math notranslate nohighlight">\(m\)</span> tests using the Bonferroni method, so each test has level <span class="math notranslate nohighlight">\(\frac{\alpha}{m}\)</span>. Let <span class="math notranslate nohighlight">\(P_1, P_2, \dots , P_m\)</span> be the p-values. For example, for test <span class="math notranslate nohighlight">\(k\)</span>, we will reject <span class="math notranslate nohighlight">\(H^{k}_{0}\)</span> if <span class="math notranslate nohighlight">\( P_k &lt; \frac{\alpha}{m}\)</span>. Remember that each <span class="math notranslate nohighlight">\(P_k\)</span> is a random variable: it depends on the sample.</p>
@@ -554,7 +583,7 @@ $<span class="math notranslate nohighlight">\(FWER ~ = ~ 1 - (1 - \frac{\alpha}{
 </div>
 <p>Formally, the Benjamini-Hochberg process proposes that we reject all the hypotheses <span class="math notranslate nohighlight">\(H^{1}_0, H^{2}_0, \dots, H^{k}_0\)</span> such that <span class="math notranslate nohighlight">\(k\)</span> is the largest number for which <span class="math notranslate nohighlight">\(P_{(k)} &lt; \alpha \cdot \frac{k}{m}\)</span>.</p>
 <section id="setup-and-notation">
-<h3>Setup and Notation<a class="headerlink" href="#setup-and-notation" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.1. </span>Setup and Notation<a class="headerlink" href="#setup-and-notation" title="Link to this heading">#</a></h3>
 <p>We are testing <span class="math notranslate nohighlight">\(m\)</span> null hypotheses <span class="math notranslate nohighlight">\(H_0^1, H_0^2, \ldots, H_0^m\)</span>.</p>
 <p>Let the corresponding p-values be <span class="math notranslate nohighlight">\(P_1, P_2, \ldots, P_m\)</span> with order statistics <span class="math notranslate nohighlight">\(P_{(1)}, P_{(2)}, \ldots, P_{(m)}\)</span>.</p>
 <p>Let <span class="math notranslate nohighlight">\(R\)</span> be the number of discoveries, that is, the number of rejected null hypotheses. Let <span class="math notranslate nohighlight">\(V\)</span> be the number of true null hypotheses that are rejected, that is, the number of false discoveries.</p>
@@ -578,7 +607,7 @@ FDR ~ = ~ E(FDP)
 <p>The Benjamini-Hochberg (B-H) procedure controls the <span class="math notranslate nohighlight">\(FDR\)</span> to be at most <span class="math notranslate nohighlight">\(\alpha\)</span>, as we will show below. Before we do that, recall a situation in which you would want to consider B-H. Suppose you are testing a large number of null hypotheses, only a few of which are true – and you really want to discover which ones are true. Then you might want to use B-H to have a higher chance of making the discoveries than you’d have if you were using the Bonferroni method, even though you would make more false discoveries along the way.</p>
 </section>
 <section id="b-h-procedure">
-<h3>B-H Procedure<a class="headerlink" href="#b-h-procedure" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.2. </span>B-H Procedure<a class="headerlink" href="#b-h-procedure" title="Link to this heading">#</a></h3>
 <p>As described in the last seminar, the process is:</p>
 <ul class="simple">
 <li><p>Find the largest <span class="math notranslate nohighlight">\(k\)</span> for which <span class="math notranslate nohighlight">\(P_{(k)} \le \displaystyle{\frac{\alpha k}{m}}\)</span>. Call that index <span class="math notranslate nohighlight">\(k^*\)</span>.</p></li>
@@ -604,7 +633,7 @@ FDR ~ = ~ E(FDP)
 <p>The <span class="math notranslate nohighlight">\(FDP\)</span> is the proportion of red points that are false rejections. This is a random proportion: both its numerator and denominator are random. By definition, the <span class="math notranslate nohighlight">\(FDR\)</span> is the expectation of the random proportion of false discoveries.</p>
 </section>
 <section id="proof-of-fdr-control">
-<h3>Proof of <span class="math notranslate nohighlight">\(FDR\)</span> Control<a class="headerlink" href="#proof-of-fdr-control" title="Link to this heading">#</a></h3>
+<h3><span class="section-number">13.3.3. </span>Proof of <span class="math notranslate nohighlight">\(FDR\)</span> Control<a class="headerlink" href="#proof-of-fdr-control" title="Link to this heading">#</a></h3>
 <p>The Benjamini-Hochberg procedure controls the <span class="math notranslate nohighlight">\(FDR\)</span> to be at most <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
 <p>We will prove this result in the case where the p-values are independent and continuous so they have no ties. More general proofs are provided in advanced classes including Stat 210A.</p>
 <p>For some <span class="math notranslate nohighlight">\(m_0 \le m\)</span> suppose <span class="math notranslate nohighlight">\(m_0\)</span> of the null hypotheses are true. Let <span class="math notranslate nohighlight">\(\mathcal{H_0} = \{i: H_0^i \text{ is true}\}\)</span> be the set of indices of the true null hypotheses. Then <span class="math notranslate nohighlight">\(\mathcal{H_0}\)</span> has <span class="math notranslate nohighlight">\(m_0\)</span> elements.</p>
@@ -700,6 +729,24 @@ E \left( \frac{I(P_i \le \alpha R/m)}{\max(R, 1)} \mid \mathbf{P}_{i, 0} \right)
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="Multiple_Hypotheses.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../Chapter_06/Bayesian_Estimation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">&lt;no title&gt;</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -716,22 +763,22 @@ E \left( \frac{I(P_i \le \alpha R/m)}{\max(R, 1)} \mid \mathbf{P}_{i, 0} \right)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data 188 Spring 2024</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-12-seminar-notes">Week 12 Seminar Notes</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">A. Adhikari</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">11. Data 188 Spring 2024</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-12-seminar-notes">12. Week 12 Seminar Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">12.1. A. Adhikari</a></li>
 </ul>
 </li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">Multiple Comparisons</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">Introduction</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonferroni-correction-method">Bonferroni Correction Method</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-discoveries">False Discoveries</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-bad-is-bonferroni-s-bound">How bad is Bonferroni’s bound?</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-comparisons">13. Multiple Comparisons</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduction">13.1. Introduction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bonferroni-correction-method">13.2. Bonferroni Correction Method</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#false-discoveries">13.2.1. False Discoveries</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-bad-is-bonferroni-s-bound">13.2.2. How bad is Bonferroni’s bound?</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benjaminihochberg-procedure">Benjamini–Hochberg Procedure</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-and-notation">Setup and Notation</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-h-procedure">B-H Procedure</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-fdr-control">Proof of <span class="math notranslate nohighlight">\(FDR\)</span> Control</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#benjaminihochberg-procedure">13.3. Benjamini–Hochberg Procedure</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setup-and-notation">13.3.1. Setup and Notation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#b-h-procedure">13.3.2. B-H Procedure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-fdr-control">13.3.3. Proof of <span class="math notranslate nohighlight">\(FDR\)</span> Control</a></li>
 </ul>
 </li>
 </ul>

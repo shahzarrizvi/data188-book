@@ -57,10 +57,12 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/README';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="To the Student" href="To_the_Student.html" />
+    <link rel="next" title="1. Maximum Likelihood" href="Chapter_01/00_Maximum_Likelihood.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -174,10 +176,41 @@
                 </a>
             </li>
         </ul>
-        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Introduction</span></p>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference external" href="http://prob140.org">Course Home</a></li>
-<li class="toctree-l1"><a class="reference internal" href="To_the_Student.html">To the  Student</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter_01/00_Maximum_Likelihood.html">1. Maximum Likelihood</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_01/01_The_Exponential_Rate.html">1.1. The Exponential Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_01/02_Asymptotic_Normality.html">1.2. Asymptotic Normality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_01/03_Efficiency.html">1.3. Efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_01/04_Modes_of_Convergence.html">1.4. Modes of Convergence</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter_02/00_The_Bootstrap.html">2. The Bootstrap</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_02/01_Bias_and_Variance.html">2.1. Bias and Variance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_02/02_Nonparametric_Bootstrap.html">2.2. Nonparametric Bootstrap</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter_03/00_Hypothesis_Testing.html">3. Hypothesis Testing</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_03/01_Transformations_of_Joint_Densities.html">3.1. Transformations of Joint Densities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_03/02_Testing_Hypotheses.html">3.2. Testing Hypotheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_03/03_Duality.html">3.3. Duality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter_04/00_Comparing_Populations.html">4. Comparing Populations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_04/01_Two_Populations.html">4.1. Two Populations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_04/02_Paired_Data.html">4.2. Paired Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_04/03_Goodness_of_Fit.html">4.3. Goodness of Fit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_04/04_Multiple_Comparisons.html">4.4. Multiple Comparisons</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter_05/00_Multiple_Hypotheses.html">5. Multiple Hypotheses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_05/01_Multiple_Tests.html">5.1. Multiple Tests</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="Chapter_06/00_Bayesian_Estimation.html">6. Bayesian Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="Chapter_06/01_A_Bayesian_Viewpoint.html">6.1. A Bayesian Viewpoint</a></li>
+</ul>
+</details></li>
 </ul>
 
     </div>
@@ -331,12 +364,10 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="data-188">
 <h1>Data 188<a class="headerlink" href="#data-188" title="Link to this heading">#</a></h1>
 <hr class="docutils" />
-<p>**By <a class="reference external" href="http://statistics.berkeley.edu/people/ani-adhikari">Ani Adhikari</a></p>
+<p><strong>By <a class="reference external" href="http://statistics.berkeley.edu/people/ani-adhikari">Ani Adhikari</a></strong></p>
 <p>This is the textbook for the Data 188 class at UC Berkeley.</p>
 <p>The contents of this book are licensed for free consumption under the following license:
 <a class="reference external" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)</a></p>
-<div class="toctree-wrapper compound">
-</div>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -372,11 +403,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="To_the_Student.html"
+       href="Chapter_01/00_Maximum_Likelihood.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">To the  Student</p>
+        <p class="prev-next-title"><span class="section-number">1. </span>Maximum Likelihood</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

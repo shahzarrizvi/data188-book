@@ -1,0 +1,905 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>3.1. Transformations of Joint Densities &#8212; Data 188 Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/Chapter_03/01_Transformations_of_Joint_Densities';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3.2. Testing Hypotheses" href="02_Testing_Hypotheses.html" />
+    <link rel="prev" title="3. Hypothesis Testing" href="00_Hypothesis_Testing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data 188 Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Data 188
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_01/00_Maximum_Likelihood.html">1. Maximum Likelihood</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/01_The_Exponential_Rate.html">1.1. The Exponential Rate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/02_Asymptotic_Normality.html">1.2. Asymptotic Normality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/03_Efficiency.html">1.3. Efficiency</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_01/04_Modes_of_Convergence.html">1.4. Modes of Convergence</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_02/00_The_Bootstrap.html">2. The Bootstrap</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/01_Bias_and_Variance.html">2.1. Bias and Variance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_02/02_Nonparametric_Bootstrap.html">2.2. Nonparametric Bootstrap</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="00_Hypothesis_Testing.html">3. Hypothesis Testing</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">3.1. Transformations of Joint Densities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_Testing_Hypotheses.html">3.2. Testing Hypotheses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_Duality.html">3.3. Duality</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_04/00_Comparing_Populations.html">4. Comparing Populations</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/01_Two_Populations.html">4.1. Two Populations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/02_Paired_Data.html">4.2. Paired Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/03_Goodness_of_Fit.html">4.3. Goodness of Fit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_04/04_Multiple_Comparisons.html">4.4. Multiple Comparisons</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_05/00_Multiple_Hypotheses.html">5. Multiple Hypotheses</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_05/01_Multiple_Tests.html">5.1. Multiple Tests</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../Chapter_06/00_Bayesian_Estimation.html">6. Bayesian Estimation</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../Chapter_06/01_A_Bayesian_Viewpoint.html">6.1. A Bayesian Viewpoint</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://prob140.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/shahzarrizvi/data188-book&urlpath=tree/data188-book/content/Chapter_03/01_Transformations_of_Joint_Densities.ipynb&branch=gh-pages" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/Chapter_03/01_Transformations_of_Joint_Densities.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Transformations of Joint Densities</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">3.1.1. Review</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-statistic">3.1.1.1. <span class="math notranslate nohighlight">\(t\)</span> Statistic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-standard-normal">3.1.1.2. Comparison with Standard Normal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-variable-for-joint-densities">3.1.2. Change of Variable for Joint Densities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">3.1.3. Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-of-a-sum">3.1.3.1. 1. Density of a Sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-density-of-the-sum-and-difference-of-i-i-d-standard-normals">3.1.3.2. 2. Joint Density of the Sum and Difference of i.i.d. Standard Normals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-gamma-algebra">3.1.3.3. 3. Beta-Gamma Algebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.3.4. Beta-Gamma Algebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-stick-breaking">3.1.3.5. Gamma Stick Breaking</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="transformations-of-joint-densities">
+<h1><span class="section-number">3.1. </span>Transformations of Joint Densities<a class="headerlink" href="#transformations-of-joint-densities" title="Link to this heading">#</a></h1>
+<p><strong>with Thomas Lee, Vasanth Madhavan (Fall 2022)</strong></p>
+<p>We develop a probability technique for finding the joint density of transformed random variables. The goal is to derive some distributions that are commonly used in statistical inference. We will start by describing how one such distribution arises.</p>
+<section id="review">
+<h2><span class="section-number">3.1.1. </span>Review<a class="headerlink" href="#review" title="Link to this heading">#</a></h2>
+<p>So far we have dealt with estimation. We will now take a look at hypothesis testing, starting with a high level description of the process as we saw it in Data 8 and 100.</p>
+<p>Suppose data consist of a random sample. To decide between two hypotheses about the model under which the sample was generated, we create a statistic based on the sample. We then use this statistic to see which of the hypotheses is better supported by the data.</p>
+<p>We calculate or simulate the distribution of the statistic under one of the hypotheses (called the null hypothesis). This distribution is called the null distribution of the statistic. We then compare this distribution and the observed value of the statistic.</p>
+<p>If the observed statistic is “too far in the tails” of the null distribution, that’s evidence against the null. If the observed statistic is in the main body of the null distribution, then the data are compatible with the null hypothesis.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Null Distribution of Statistic&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="mf">2.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;Observed Value of Statistic&#39;</span><span class="p">,</span> <span class="n">xy</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.6</span><span class="p">,</span> <span class="mf">0.03</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/47fc04e5c8fa885116d32b2f2f33e3631c8b24fc7d5fdfd7d8cd10977cfe1bb8.png" src="../../_images/47fc04e5c8fa885116d32b2f2f33e3631c8b24fc7d5fdfd7d8cd10977cfe1bb8.png" />
+</div>
+</div>
+<p>Judgment is involved in deciding whether the statistic is “too far” from what’s expected under the null. Recall the <a class="reference external" href="https://inferentialthinking.com/chapters/11/3/Decisions_and_Uncertainty.html#historical-note-on-the-conventions">Data 8</a> discussion about how the conventions arose.</p>
+<p>There are two kinds of errors that we may make:</p>
+<ul class="simple">
+<li><p>If the null is true, the test may select the alternative. We control for this error by setting a P-value cutoff, often 0.05 or 0.01. As you know, Fisher used these values as examples. You are free to use other cutoffs. Just be clear about what you are doing.</p></li>
+<li><p>If the alternative is true, the test may select the null. In Data 8/100 we spend no time on this. We’ll soon see that the basis for some of our standard tests involves this error as well.</p></li>
+</ul>
+<p>There are many kinds of tests. Here are some observations about the <span class="math notranslate nohighlight">\(t\)</span>-test, developed by <a class="reference external" href="https://en.wikipedia.org/wiki/William_Sealy_Gosset">William Gosset</a>.</p>
+<section id="t-statistic">
+<h3><span class="section-number">3.1.1.1. </span><span class="math notranslate nohighlight">\(t\)</span> Statistic<a class="headerlink" href="#t-statistic" title="Link to this heading">#</a></h3>
+<p>Suppose <span class="math notranslate nohighlight">\(X_1, X_2, ..., X_n\)</span> are i.i.d normal <span class="math notranslate nohighlight">\((\mu, \sigma^2)\)</span>, and let <span class="math notranslate nohighlight">\(S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X}_n)^2\)</span> be the <em>sample variance</em> we defined in an earlier worksheet.</p>
+<p>The distribution of <span class="math notranslate nohighlight">\(\frac{\bar{X}_n - \mu}{S/\sqrt{n}}\)</span> is called the <span class="math notranslate nohighlight">\(t_{n-1}\)</span> distribution. In standard terminology, this is the <span class="math notranslate nohighlight">\(t\)</span> distribution with <span class="math notranslate nohighlight">\(n-1\)</span> <em>degrees of freedom</em>.</p>
+<p>The statistic <span class="math notranslate nohighlight">\(\frac{\bar{X}_n - \mu}{S/\sqrt{n}}\)</span> is called a <span class="math notranslate nohighlight">\(t\)</span>-statistic.</p>
+<p>The worksheet will take you through a derivation of the <span class="math notranslate nohighlight">\(t\)</span> densities. You will also check that <span class="math notranslate nohighlight">\(t_1\)</span> is our old friend the Cauchy.</p>
+</section>
+<section id="comparison-with-standard-normal">
+<h3><span class="section-number">3.1.1.2. </span>Comparison with Standard Normal<a class="headerlink" href="#comparison-with-standard-normal" title="Link to this heading">#</a></h3>
+<p>Remember that we are working under <em>the big assumption that we have an i.i.d. normal sample</em>. Therefore, for every <span class="math notranslate nohighlight">\(n\)</span>, the <em>standardized sample mean</em> <span class="math notranslate nohighlight">\(\frac{\bar{X}_n - \mu}{\sigma/\sqrt{n}}\)</span> has the standard normal distribution.</p>
+<p>The <span class="math notranslate nohighlight">\(t\)</span>-statistic simply replaces <span class="math notranslate nohighlight">\(\sigma\)</span> by <span class="math notranslate nohighlight">\(S\)</span> in the standardized sample mean. We know that for large <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(S\)</span> is close to <span class="math notranslate nohighlight">\(\sigma\)</span> with high probability. So it is no surprise that for large <span class="math notranslate nohighlight">\(n\)</span>, the <span class="math notranslate nohighlight">\(t_n\)</span> density is hard to distinguish from normal <span class="math notranslate nohighlight">\((0, 1)\)</span>.</p>
+<p>Moreover, if <span class="math notranslate nohighlight">\(n\)</span> is large then the assumption of underlying normality is unnecessary. Recall that in an earlier worksheet we showed that as long as the sample is i.i.d. (not necessarily normal), <span class="math notranslate nohighlight">\(\frac{\bar{X_n} - \mu}{S/\sqrt{n}}\)</span> converges to standard normal in distribution.</p>
+<p>But for small <span class="math notranslate nohighlight">\(n\)</span>, the <span class="math notranslate nohighlight">\(t_n\)</span> distribution is useful provided we believe the “i.i.d. normals” assumption. It has fatter tails than the standard normal distribution. This should make sense intuitively. With just a small amount of data, our estimation of sampling variability will not be good, and we will need more wiggle room.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># change this variable to see how </span>
+<span class="c1"># the t distribution changes with the number of degrees of freedom</span>
+<span class="n">t_degrees_of_freedom</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;darkblue&#39;</span><span class="p">,</span> <span class="n">lw</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;standard normal&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">stats</span><span class="o">.</span><span class="n">t</span><span class="o">.</span><span class="n">pdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">t_degrees_of_freedom</span><span class="p">),</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;t&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$t$ (degrees of freedom &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">t_degrees_of_freedom</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;) vs standard normal&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/0685756b0ba376cb861c6b065082245efa3d8e90880665deb7b2edc0b56a9a7e.png" src="../../_images/0685756b0ba376cb861c6b065082245efa3d8e90880665deb7b2edc0b56a9a7e.png" />
+</div>
+</div>
+<p>The seminar session is devoted to developing a technique that will allow us to derive distributions like the <span class="math notranslate nohighlight">\(t\)</span> and the <span class="math notranslate nohighlight">\(F\)</span> which is also much used in inference.</p>
+</section>
+</section>
+<section id="change-of-variable-for-joint-densities">
+<h2><span class="section-number">3.1.2. </span>Change of Variable for Joint Densities<a class="headerlink" href="#change-of-variable-for-joint-densities" title="Link to this heading">#</a></h2>
+<p>Recall from <a class="reference external" href="http://prob140.org/textbook/content/Chapter_16/02_Monotone_Functions.html#change-of-variable-formula-for-density-monotone-function">Data 140</a> how we used change of variable to find the density of transformations of single random variable:</p>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be a random variable with density <span class="math notranslate nohighlight">\(f_X\)</span> and <span class="math notranslate nohighlight">\(U=g(X)\)</span> where <span class="math notranslate nohighlight">\(g(x)\)</span> is some differentiable, monotone function.</p>
+<p>The density <span class="math notranslate nohighlight">\(f_U\)</span> is then:
+$<span class="math notranslate nohighlight">\(f_U(u)=\frac{f_X(x)}{|\frac{d}{dx}g(x)|} \quad \text{at} \quad x=g^{-1}(u)\)</span><span class="math notranslate nohighlight">\(
+or equivalently
+\)</span><span class="math notranslate nohighlight">\(f_U(u)=f_X(g^{-1}(u))⋅\left|\frac{d}{dx}g^{-1}(u)\right|\)</span>$</p>
+<p>In Data 140, we also worked with densities of some functions of two random variables. For example, suppose we have random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> with joint density <span class="math notranslate nohighlight">\(f_{X,Y}\)</span>. We found the density <span class="math notranslate nohighlight">\(f_S\)</span> of the sum <span class="math notranslate nohighlight">\(S=X+Y\)</span> by calculating:
+$<span class="math notranslate nohighlight">\(f_S(s)= \int_{-∞}^ {∞}f_{X,Y}(x, s-x) \enspace dx\)</span><span class="math notranslate nohighlight">\(
+since \)</span>Y<span class="math notranslate nohighlight">\( can be put in terms of \)</span>X<span class="math notranslate nohighlight">\( with \)</span>Y=S-X$.</p>
+<p>However, the analogous calculation doesn’t always work for other functions of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. For example, if our function were instead a ratio <span class="math notranslate nohighlight">\(\displaystyle{R=\frac{Y}{X}}\)</span>, then we can use <span class="math notranslate nohighlight">\(Y = RX\)</span> to make an attempt at the density of <span class="math notranslate nohighlight">\(R\)</span>. But unfortunately
+$<span class="math notranslate nohighlight">\(
+f_R(r) \stackrel{???}{=} \int_{-∞}^ {∞}f_{X,Y}(x, rx) \enspace dx
+\)</span>$
+…is not true.</p>
+<p>The reason for the difference is not obvious at first glance. However, if we compare the region <span class="math notranslate nohighlight">\(S \in ds\)</span> with the region <span class="math notranslate nohighlight">\(R \in dr\)</span>, we get the diagrams below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span><span class="p">,</span> <span class="n">ds</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.2</span> <span class="c1"># Arbitrary for visualization purposes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="o">+</span><span class="n">ds</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span> <span class="c1"># Remove axis labels for confusion</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">s</span><span class="o">+</span><span class="n">ds</span><span class="o">-</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;x+y=s&#39;</span><span class="p">,</span> <span class="s1">&#39;x+y=s+ds&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$S \in ds$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/7edf60cf3355bfd2250aa8bfdfd3195a907b86a565cc75601a1e10af990f98d8.png" src="../../_images/7edf60cf3355bfd2250aa8bfdfd3195a907b86a565cc75601a1e10af990f98d8.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">dr</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> <span class="mf">0.4</span> <span class="c1"># Arbitrary for visualization purposes</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">dr</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;grey&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">0.25</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span> <span class="c1"># Remove axis labels for confusion</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="p">(</span><span class="n">r</span><span class="o">+</span><span class="n">dr</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gold&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;y/x = r&#39;</span><span class="p">,</span> <span class="s1">&#39;y/x = r+dr&#39;</span><span class="p">],</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;best&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$R \in dr$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/646ed3a6e672ecce666da2475317221b6d08949c24df95107a7a5ce598840db2.png" src="../../_images/646ed3a6e672ecce666da2475317221b6d08949c24df95107a7a5ce598840db2.png" />
+</div>
+</div>
+<p>As we can observe from the above graphs, our formula for the density of the sum <span class="math notranslate nohighlight">\(S\)</span> works because the width of the interval is always <span class="math notranslate nohighlight">\(ds\)</span> because the slopes of both lines are the same. However, the graph of the ratio <span class="math notranslate nohighlight">\(R\)</span> has different slopes for the two lines. The width flares as <span class="math notranslate nohighlight">\(x\)</span> goes away from 0. This is bad because the probability is no longer dependent only on the width <span class="math notranslate nohighlight">\(dr\)</span> (like <span class="math notranslate nohighlight">\(ds\)</span> is in the sum) but also on <span class="math notranslate nohighlight">\(x\)</span>. Our calculation has to take that into account.</p>
+<p>Fortunately for us, we can apply concepts from multivariable calculus to solve this.</p>
+<p>Let us first define some notation. <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> once again have joint density <span class="math notranslate nohighlight">\(f_{X,Y}\)</span>. Let <span class="math notranslate nohighlight">\(g\)</span> be any smooth, invertible function where <span class="math notranslate nohighlight">\(g:\mathbb{R}^2 → \mathbb{R}^2\)</span>.</p>
+<p>We will use the following notation:
+$<span class="math notranslate nohighlight">\(g(X, Y)=(g_1(X,Y), g_2(X,Y))=(U,V)\)</span>$</p>
+<p>Let
+\begin{align}
+u&amp;=g_1(x,y)\
+v&amp;=g_2(x,y)
+\end{align}</p>
+<p>Assume that <span class="math notranslate nohighlight">\(g\)</span> is invertible and let the function <span class="math notranslate nohighlight">\(g^{-1} = h = (h_1, h_2)\)</span>. Then</p>
+<p>\begin{align}
+x&amp;=h_1(u,v)\
+y&amp;=h_2(u,v)\
+\end{align}</p>
+<p>Assume also that <span class="math notranslate nohighlight">\(g\)</span> is differentiable.</p>
+<p>The Jacobian <span class="math notranslate nohighlight">\(J\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+  J =
+  \left[ {\begin{array}{cc}
+    \frac{d}{dx}g_1(x,y) &amp; \frac{d}{dy}g_1(x,y) \\
+    \frac{d}{dx}g_2(x,y) &amp; \frac{d}{dy}g_2(x,y) \\
+  \end{array} } \right]
+\end{split}\]</div>
+<p>Its <a class="reference external" href="https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant#Inverse">inverse</a> <span class="math notranslate nohighlight">\(K\)</span> is equal to
+$<span class="math notranslate nohighlight">\(
+  K =
+  \left[ {\begin{array}{cc}
+    \frac{d}{du}h_1(u,v) &amp; \frac{d}{dv}h_1(u,v) \\
+    \frac{d}{du}h_2(u,v) &amp; \frac{d}{dv}h_2(u,v) \\
+  \end{array} } \right]
+\)</span>$</p>
+<p>It follows that <span class="math notranslate nohighlight">\(\det(J)=\displaystyle{\frac{1}{\det(K)}}\)</span>.</p>
+<p>By an extension of our 1-dimensional calculation, it can be shown that the density of <span class="math notranslate nohighlight">\((U, V)\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[f_{U,V}(u,v)=\frac{f_{X,Y}(x,y)}{|\det(J)|} \quad \text{at} \enspace x=h_1(u,v), y=h_2(u,v)\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[f_{U,V}(u,v) = f_{X,Y}(h_1(u,v),h_2(u,v)) \cdot |\det(K)|\]</div>
+</section>
+<section id="examples">
+<h2><span class="section-number">3.1.3. </span>Examples<a class="headerlink" href="#examples" title="Link to this heading">#</a></h2>
+<section id="density-of-a-sum">
+<h3><span class="section-number">3.1.3.1. </span>1. Density of a Sum<a class="headerlink" href="#density-of-a-sum" title="Link to this heading">#</a></h3>
+<p>Suppose we have random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> with joint density <span class="math notranslate nohighlight">\(f_{X,Y}\)</span>. In Data 140, we said that the density <span class="math notranslate nohighlight">\(f_S\)</span> of the sum <span class="math notranslate nohighlight">\(S=X+Y\)</span> can be found by the calculation
+$<span class="math notranslate nohighlight">\(f_S(s)= \int_{-∞}^ {∞}f_{X,Y}(x, s-x) \enspace dx\)</span>$</p>
+<p>Let’s establish this using our two-variable change of variable formula. Consider the transformation</p>
+<p>\begin{align}
+U &amp;= X\
+V &amp;= X + Y
+\end{align}</p>
+<p>We will find the joint density of <span class="math notranslate nohighlight">\((U, V)\)</span> and use that to find the marginal density of <span class="math notranslate nohighlight">\(V\)</span>.</p>
+<p>To do this, we have to crank the handle of the machine we developed above.</p>
+<p>\begin{align}
+u&amp;=g_1(x,y) = x\
+v&amp;=g_2(x,y) = x + y\
+x&amp;=h_1(u,v) = u\
+y&amp;=h_2(u,v) = v - u \quad \text{since} \enspace x=u\
+\end{align}
+<br />
+$<span class="math notranslate nohighlight">\(
+  J =
+  \left[ {\begin{array}{cc}
+    \frac{d}{dx}g_1(x,y) &amp; \frac{d}{dy}g_1(x,y) \\
+    \frac{d}{dx}g_2(x,y) &amp; \frac{d}{dy}g_2(x,y) \\
+  \end{array} } \right]
+  = \left[ {\begin{array}{cc}
+    1 &amp; 0 \\
+    1 &amp; 1 \\
+  \end{array} } \right]
+\)</span><span class="math notranslate nohighlight">\(\
+\)</span><span class="math notranslate nohighlight">\( |\det(J)| = 1 \)</span>$</p>
+<p>Either <span class="math notranslate nohighlight">\(J\)</span> or <span class="math notranslate nohighlight">\(K\)</span> can be computed, and the corresponding equation can be used. In this case, computing either is relatively simple, but in some situations one will be easier than the other.</p>
+<p>Our general formula is</p>
+<div class="math notranslate nohighlight">
+\[f_{U,V}(u,v)=\frac{f_{X,Y}(x,y)}{|\det(J)|} \quad \text{at} \enspace x=h_1(u,v), y=h_2(u,v)\]</div>
+<p>Hence
+$<span class="math notranslate nohighlight">\(
+f_{U,V}(u,v) ~ = ~ \frac{f_{X,Y}(u,v-u)}{1} ~ = ~ f_{X,Y}(u, v-u)
+\)</span>$</p>
+<p>We can now calculate the marginal density of <span class="math notranslate nohighlight">\(V\)</span> by integrating out <span class="math notranslate nohighlight">\(U\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ f_V(v)= \int_{-∞}^ {∞}f_{X,Y}(u, v -u) \enspace du \]</div>
+<p>Remember that <span class="math notranslate nohighlight">\(V = X+Y\)</span>. The formula above is exactly the formula for the density of the sum provided in Data 140.</p>
+</section>
+<section id="joint-density-of-the-sum-and-difference-of-i-i-d-standard-normals">
+<h3><span class="section-number">3.1.3.2. </span>2. Joint Density of the Sum and Difference of i.i.d. Standard Normals<a class="headerlink" href="#joint-density-of-the-sum-and-difference-of-i-i-d-standard-normals" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> be i.i.d. standard normal, and let</p>
+<p>\begin{align}
+U &amp;= X + Y\
+V &amp;= X - Y
+\end{align}</p>
+<p>Inverses can be found by adding or subtracting <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_2\)</span>:</p>
+<p>\begin{align}
+u&amp;=g_1(x,y) = x + y\
+v&amp;=g_2(x,y) = x - y\
+x&amp;=h_1(u,v) = \frac{u + v}{2}\
+y&amp;=h_2(u,v) = \frac{u - v}{2}\
+\end{align}
+<br />
+$<span class="math notranslate nohighlight">\(
+  J =
+ \left[ {\begin{array}{cc}
+    1 &amp; 1 \\
+    1 &amp; -1 \\
+  \end{array} } \right]
+\)</span><span class="math notranslate nohighlight">\(\
+\)</span><span class="math notranslate nohighlight">\( |\det(J)| = 2 \)</span>$</p>
+<p>We now have all the ingredients we need to plug into the change of variable formula.</p>
+<p>Recall the formula for density of a standard normal random variable: <span class="math notranslate nohighlight">\(f(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{1}{2}x^2}\)</span>. Since <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent, we can use this density to get the joint density <span class="math notranslate nohighlight">\(f_{X,Y}\)</span>, to get:</p>
+<p>\begin{align}
+f_{U,V}(u,v) &amp;= ~ \frac{f_{X,Y}(\frac{u + v}{2},\frac{u - v}{2})}{2} \
+&amp;= ~ \frac{1}{2}\cdot\frac{1}{2\pi}\exp\left(-\frac{1}{2}\left(\left(\frac{u + v}{2}\right)^2 + \left(\frac{u - v}{2}\right)^2\right)\right) \
+&amp;= ~ \frac{1}{4\pi}\exp\left(-\frac{1}{2}\left(\frac{u^2}{2} + \frac{v^2}{2}\right)\right) \
+&amp;= ~ \frac{1}{4\pi} \exp\left(-\frac{1}{2} \cdot \frac{u^2}{2}) \cdot \exp(-\frac{1}{2} \cdot \frac{v^2}{2}\right)
+\end{align}</p>
+<p>The joint density has factored, so <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are independent. Examine each factor to see that each of <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> is normal.</p>
+<p>The parameters of the normals are just the means and variances, which we know are <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(2\)</span> respectively by properties of expecation and variance.</p>
+<p>Thus <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> independent normal <span class="math notranslate nohighlight">\((0, 2)\)</span> variables.</p>
+<p>Do you need to check that <span class="math notranslate nohighlight">\(\displaystyle{\frac{1}{4\pi}}\)</span> is the right constant? No, because <span class="math notranslate nohighlight">\(f_{U,V}\)</span> is a joint density and hence <em>must</em> have the right constant factor. But you can check if you wish.</p>
+<p>In Data 140 we proved that the sum and difference of two independent standard normal random variables were independent normal variables. But that process involved MGFs to show that the sum and difference are normal, and the multivariate normal density to establish independence. The change of variable formula allows us to find the joint density of the sum and difference without using any of that heavy machinery.</p>
+</section>
+<section id="beta-gamma-algebra">
+<h3><span class="section-number">3.1.3.3. </span>3. Beta-Gamma Algebra<a class="headerlink" href="#beta-gamma-algebra" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> have the gamma <span class="math notranslate nohighlight">\((r, \lambda)\)</span> distribution and let <span class="math notranslate nohighlight">\(Y\)</span> be gamma <span class="math notranslate nohighlight">\((s, \lambda )\)</span> independent of <span class="math notranslate nohighlight">\(X\)</span>. Define the transformed variables <span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> as follows.</p>
+<p>\begin{align}
+U &amp;= X + Y\
+V &amp;=\frac{X}{X + Y}
+\end{align}</p>
+<p><span class="math notranslate nohighlight">\(U\)</span> is the sum and <span class="math notranslate nohighlight">\(V\)</span> is <span class="math notranslate nohighlight">\(X\)</span> as a proportion of the sum.</p>
+<p>Inverses can be found by multiplying <span class="math notranslate nohighlight">\(g_1\)</span> and <span class="math notranslate nohighlight">\(g_2\)</span> together.</p>
+<p>\begin{align}
+u&amp;=g_1(x,y) = x + y\
+v&amp;=g_2(x,y) = \frac{x} {x + y}\
+x&amp;=h_1(u,v) = uv\
+y&amp;=h_2(u,v) = u - uv = u(1-v)
+\end{align}</p>
+<p>To avoid differentiating a quotient, we will use <span class="math notranslate nohighlight">\(K\)</span> here.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+K =
+  \left[ {\begin{array}{cc}
+    \frac{d}{du}h_1(u,v) &amp; \frac{d}{dv}h_1(u,v) \\
+    \frac{d}{du}h_2(u,v) &amp; \frac{d}{dv}h_2(u,v) \\
+  \end{array} } \right]
+  = 
+ \left[ {\begin{array}{cc}
+    v &amp; u \\
+    1 -v &amp; -u \\
+  \end{array} } \right]
+\end{split}\]</div>
+<p>So
+$<span class="math notranslate nohighlight">\(
+|\det(K)| = |-uv -u(1 - v)| = |-u| = u
+\)</span>$</p>
+<p>because <span class="math notranslate nohighlight">\(u &gt; 0\)</span>.</p>
+<p>Now plug into the change of variable formula. Recall the density of a <span class="math notranslate nohighlight">\(X\)</span>: <span class="math notranslate nohighlight">\(f_X(x) = \frac{\lambda^r}{\Gamma(r)}x^{r - 1}e^{-\lambda x}\)</span> for <span class="math notranslate nohighlight">\(x &gt; 0\)</span>.</p>
+<p>\begin{align}
+f_{U,V}(u,v) &amp;= f_{X,Y}(h_1(u,v),h_2(u,v)) \cdot |\det(K)|\
+&amp;= f_{X,Y}(uv,u(1-v)) \cdot u
+\end{align}</p>
+<p>Since <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent we can write their joint density as a product.</p>
+<p>\begin{align}
+f_{U,V}(u,v) &amp;= u \cdot \frac{\lambda^r}{\Gamma(r)}(uv)^{r - 1}e^{-\lambda uv} \cdot \frac{\lambda^s}{\Gamma(s)}(u(1 - v))^{s - 1}e^{-\lambda u(1 - v)} \
+&amp;=u \cdot \frac{\lambda^r}{\Gamma(r)}(uv)^{r - 1}e^{-\lambda uv} \cdot \frac{\lambda^s}{\Gamma(s)}(u(1 - v))^{s - 1}e^{-\lambda u(1 - v)}\
+&amp;=\frac{\lambda^{r+s}}{\Gamma(r+s)}u^{r +s- 1}e^{-\lambda u} \cdot \frac{\Gamma(r + s)}{\Gamma(r)\Gamma(s)}v^{r - 1}(1 - v)^{s - 1}\
+&amp;=f_{U}(u) \cdot f_{V}(v)
+\end{align}</p>
+<p>We have derived the following result:</p>
+</section>
+<section id="id1">
+<h3><span class="section-number">3.1.3.4. </span>Beta-Gamma Algebra<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> have the gamma <span class="math notranslate nohighlight">\((r, \lambda)\)</span> distribution and let <span class="math notranslate nohighlight">\(Y\)</span> be gamma <span class="math notranslate nohighlight">\((s, \lambda )\)</span> independent of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(U = X+Y\)</span> and <span class="math notranslate nohighlight">\(V = \displaystyle{\frac{X}{X+Y}}\)</span>. Then</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(U\)</span> is gamma <span class="math notranslate nohighlight">\((r + s, \lambda)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(V\)</span> is beta <span class="math notranslate nohighlight">\((r, s)\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(U\)</span> and <span class="math notranslate nohighlight">\(V\)</span> are independent.</p></li>
+</ul>
+<p>We already knew that <span class="math notranslate nohighlight">\(X+Y\)</span> is gamma. We showed that in Data 140 using the mgf. We now know the ratio <span class="math notranslate nohighlight">\(X/(X+Y)\)</span> is a beta independent of the sum.</p>
+</section>
+<section id="gamma-stick-breaking">
+<h3><span class="section-number">3.1.3.5. </span>Gamma Stick Breaking<a class="headerlink" href="#gamma-stick-breaking" title="Link to this heading">#</a></h3>
+<p>In the worksheet you will use beta-gamma algebra to establish the <span class="math notranslate nohighlight">\(F\)</span> and <span class="math notranslate nohighlight">\(t\)</span> distributions. Here we will ust it to “recreate” the arrival times in a Poisson process, as follows.</p>
+<p>Suppose we have arrivals in a Poisson process specificed by an exponential (<span class="math notranslate nohighlight">\(\lambda\)</span>) or equivalently a gamma (<span class="math notranslate nohighlight">\(1, \lambda\)</span>) distribution. As we know, the time of the second arrival has the gamma (<span class="math notranslate nohighlight">\(2, \lambda\)</span>) distribution.</p>
+<p>Now let <span class="math notranslate nohighlight">\(S\)</span> have the gamma <span class="math notranslate nohighlight">\((2, \lambda)\)</span> distribution.</p>
+<p>Let <span class="math notranslate nohighlight">\(R\)</span> have the beta <span class="math notranslate nohighlight">\((1, 1)\)</span> distribution, or equivalently the uniform <span class="math notranslate nohighlight">\((0,1)\)</span> distribution, independent of <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Let <span class="math notranslate nohighlight">\(X = RS\)</span> and <span class="math notranslate nohighlight">\(Y = (1-R)S\)</span>. Then the beta-gamma algebra implies that <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are i.i.d. gamma <span class="math notranslate nohighlight">\((1, \lambda)\)</span>. That is, if you start with the time to the second arrival in a Poisson process, you can multiply it by an independent beta <span class="math notranslate nohighlight">\((1, 1)\)</span> proportion to split it into two i.i.d. exponential <span class="math notranslate nohighlight">\((\lambda)\)</span> pieces. This essentially recreates the inter-arrival times.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">gamma</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">stats</span><span class="o">.</span><span class="n">beta</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">s</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(np.float64(0.6990949533062066), np.float64(0.5384317990315949))
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">s</span><span class="o">+</span><span class="mf">0.21</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="n">ms</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;RS&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;S&#39;</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="s1">&#39;xx-large&#39;</span><span class="p">,</span> <span class="n">horizontalalignment</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;gamma (1, $\lambda$)&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">horizontalalignment</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">r</span><span class="o">*</span><span class="n">s</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">r</span><span class="p">)</span><span class="o">*</span><span class="n">s</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="s1">&#39;gamma (1, $\lambda$)&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">horizontalalignment</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="n">r</span><span class="o">*</span><span class="n">s</span><span class="p">,</span> <span class="n">s</span><span class="p">],</span> <span class="p">[])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$S$: gamma (2, $\lambda$); $R$: beta (1, 1) independent of $S$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/210b28eae96ccdc0f16a55b4a5c30aec00b6e861130f51ef4db59d5e500e19fa.png" src="../../_images/210b28eae96ccdc0f16a55b4a5c30aec00b6e861130f51ef4db59d5e500e19fa.png" />
+</div>
+</div>
+<p>The name “stick breaking” comes from pictures like the one above: a stick of random gamma length has been broken into two independent gamma pieces.</p>
+<p>If you are concerned that the result we proved starts with two sticks and joins them together, whereas in the picture above we start with one stick and split it into two, then either notice that the maps in the beta-gamma transformations are bijections, or derive the “reverse direction” fact in the next worksheet.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/Chapter_03"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="00_Hypothesis_Testing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">3. </span>Hypothesis Testing</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="02_Testing_Hypotheses.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">3.2. </span>Testing Hypotheses</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review">3.1.1. Review</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#t-statistic">3.1.1.1. <span class="math notranslate nohighlight">\(t\)</span> Statistic</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#comparison-with-standard-normal">3.1.1.2. Comparison with Standard Normal</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#change-of-variable-for-joint-densities">3.1.2. Change of Variable for Joint Densities</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#examples">3.1.3. Examples</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#density-of-a-sum">3.1.3.1. 1. Density of a Sum</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joint-density-of-the-sum-and-difference-of-i-i-d-standard-normals">3.1.3.2. 2. Joint Density of the Sum and Difference of i.i.d. Standard Normals</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#beta-gamma-algebra">3.1.3.3. 3. Beta-Gamma Algebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">3.1.3.4. Beta-Gamma Algebra</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#gamma-stick-breaking">3.1.3.5. Gamma Stick Breaking</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ani Adhikari
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

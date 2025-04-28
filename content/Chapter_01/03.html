@@ -1,0 +1,719 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Data 188, Spring 2024 &#8212; Data 188 Textbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/Chapter_01/03';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../README.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Data 188 Textbook</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../README.html">
+                    Data 188
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Chapters</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_02/S4.html">1. Data 188, Spring 2024</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_04/S8.html">3. Data 188, Spring 2024</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_04/S9.html">5. Data 188 Spring 2024</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_04/S11.html">7. Data 188 Spring 2024</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_05/S12.html">10. Data 188 Spring 2024</a></li>
+
+
+<li class="toctree-l1"><a class="reference internal" href="../Chapter_06/S13.html">13. Data 188 Spring 2024</a></li>
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://prob140.datahub.berkeley.edu/hub/user-redirect/git-pull?repo=https%3A//github.com/shahzarrizvi/data188-book&urlpath=tree/data188-book/content/Chapter_01/03.ipynb&branch=gh-pages" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on JupyterHub"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="JupyterHub logo" src="../../_static/images/logo_jupyterhub.svg">
+  </span>
+<span class="btn__text-container">JupyterHub</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/Chapter_01/03.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Data 188, Spring 2024</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data 188, Spring 2024</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3-seminar-notes">Week 3 Seminar Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">A. Adhikari</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-efficiency-and-the-cramer-rao-bound">Part 1: Efficiency and the Cramér-Rao Bound</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-cramer-rao-bound">Proof of the Cramér-Rao Bound</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-modes-of-convergence">Part 2: Modes of Convergence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution">Convergence in Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-continuity-points">A Note on Continuity Points</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probablility">Convergence in Probablility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-properties-of-convergence">Useful Properties of Convergence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="data-188-spring-2024">
+<h1>Data 188, Spring 2024<a class="headerlink" href="#data-188-spring-2024" title="Link to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="week-3-seminar-notes">
+<h1>Week 3 Seminar Notes<a class="headerlink" href="#week-3-seminar-notes" title="Link to this heading">#</a></h1>
+<section id="a-adhikari">
+<h2>A. Adhikari<a class="headerlink" href="#a-adhikari" title="Link to this heading">#</a></h2>
+<p><strong>with Cyrus Tau and Ian Joffe (Fall 2022)</strong></p>
+<p>This seminar has two parts.</p>
+<p>First, we establish a result that shows that under the smoothness and existence conditions we have been assuming, the MLE is pretty much the best way to estimate a numercial parameter.</p>
+<p>Next, we discuss different ways in which random variables converge, and connect that to last time’s derivation of the asymptotic distribution of the MLE.</p>
+</section>
+<section id="part-1-efficiency-and-the-cramer-rao-bound">
+<h2>Part 1: Efficiency and the Cramér-Rao Bound<a class="headerlink" href="#part-1-efficiency-and-the-cramer-rao-bound" title="Link to this heading">#</a></h2>
+<p>We’ve shown that the MLE is an asymptotically unbiased estimate of the true parameter <span class="math notranslate nohighlight">\(\theta\)</span> and that its distribution is approximately <span class="math notranslate nohighlight">\(\text{Normal}(\theta, \frac{1}{nI(\theta)})\)</span> as <span class="math notranslate nohighlight">\(n\)</span> increases. This is useful because it allows us to make confidence intervals based on the MLE. But could we do better?</p>
+<p>One measure of how good an estimate is relative to another is <em>efficiency</em>:</p>
+<p>The <em>relative efficiency</em> of unbiased estimators <span class="math notranslate nohighlight">\(T_1\)</span> and <span class="math notranslate nohighlight">\(T_2\)</span> is defined as <span class="math notranslate nohighlight">\(\frac{Var(T_1)}{Var(T_2)}\)</span>. <span class="math notranslate nohighlight">\(T_1\)</span> is considered a better estimator is this ratio is less than 1.</p>
+<p>It’s important that we have assumed both estimators to be unbiased. If they had different biases, then we’d have to deal with that before comparing variances.</p>
+<p>The <strong>Cramér-Rao theorem</strong> states that for any unbiased estimator <span class="math notranslate nohighlight">\(T\)</span> of <span class="math notranslate nohighlight">\(\theta\)</span> based on sample size <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(Var_{\theta}(T) \geq \frac{1}{nI(\theta)}\)</span>.</p>
+<p>We say that MLE <span class="math notranslate nohighlight">\(\hat{\theta}_n\)</span> is asymptotically efficient because for large <span class="math notranslate nohighlight">\(n\)</span> it is almost unbiased and its variance is close to this lower bound. In other words, if we can calculate an MLE, it will be pretty much the best estimate we could get.</p>
+<section id="proof-of-the-cramer-rao-bound">
+<h3>Proof of the Cramér-Rao Bound<a class="headerlink" href="#proof-of-the-cramer-rao-bound" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> = <span class="math notranslate nohighlight">\(X_1, X_2, ... \)</span> be i.i.d random variables with common probability function <span class="math notranslate nohighlight">\(f(x \mid \theta)\)</span>. Let <span class="math notranslate nohighlight">\(T\)</span> be an unbiased estimator of <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Define <span class="math notranslate nohighlight">\(\displaystyle W(\mathbf{X},\theta) = \sum_{i=1}^{n} s(X_i,\theta)\)</span> where <span class="math notranslate nohighlight">\(s\)</span> is the score function defined as in the last seminar by</p>
+<div class="math notranslate nohighlight">
+\[
+s(x, \theta) ~ = ~ \frac{d}{d\theta} \log f(x \mid \theta) ~ = ~ \frac{f'(x \mid \theta)}{f(x \mid \theta)} 
+\]</div>
+<p>From last time we know that <span class="math notranslate nohighlight">\(E_\theta(W(\mathbf{X},\theta)) = 0\)</span>. We also know that the Fisher Information <span class="math notranslate nohighlight">\(I(\theta)\)</span> is defined as <span class="math notranslate nohighlight">\(Var(s(X, \theta))\)</span>. Since <span class="math notranslate nohighlight">\(X_1, X_2, \ldots, X_n\)</span> are i.i.d,</p>
+<div class="math notranslate nohighlight">
+\[
+Var_\theta(W(\mathbf{X},\theta)) = nI(θ)
+\]</div>
+<p>Let <span class="math notranslate nohighlight">\(\rho(T, W)\)</span> be the correlation between <span class="math notranslate nohighlight">\(T\)</span> and <span class="math notranslate nohighlight">\(W(\mathbf{X},\theta)\)</span>. So <span class="math notranslate nohighlight">\(\rho(T, W) \le 1\)</span>. Thus we have</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{Cov_\theta(T,W)}{SD_\theta(T)SD_\theta(W)} ≤ 1
+\]</div>
+<p>which is equivalent to</p>
+<div class="math notranslate nohighlight">
+\[
+Var_\theta(T) ≥ \frac{Cov_\theta^2(T,W)}{Var(W)}
+\]</div>
+<p>by squaring both sides of the second inequality. So</p>
+<div class="math notranslate nohighlight">
+\[
+Var_\theta(T) ≥ \frac{Cov_\theta^2(T,W)}{nI(\theta)}
+\]</div>
+<p>That means the Cramér-Rao theorem would be true if <span class="math notranslate nohighlight">\(Cov_\theta(T,W) = 1\)</span>. Let’s see if we can show this.</p>
+<p>Since <span class="math notranslate nohighlight">\(T\)</span> is unbiased,</p>
+<div class="math notranslate nohighlight">
+\[
+\theta = E_\theta(T) = ∫_\mathbf{x} T(x_1,x_2, ..., x_n) \prod_{i=1}^{n} f(x_i \mid \theta) \; dx_1dx_2...dx_n
+\]</div>
+<p>Differentiate both sides with respect to <span class="math notranslate nohighlight">\(\theta\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+1 = \frac{d }{d\theta} \theta = \frac{d}{d\theta}∫_\mathbf{x} T(x_1,x_2, \ldots, x_n) \prod_{i=1}^{n} f(x_i \mid \theta) \; dx_1dx_2 \ldots dx_n
+\]</div>
+<p>Under regularity conditions that we assume are met, we can switch the derivative and integal on the right side to get</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+1 &amp;= ∫_\mathbf{x} \frac{d}{d\theta} T(x_1,x_2, \ldots, x_n) \prod_{i=1}^{n} f(x_i \mid \theta) \; dx_1dx_2 \ldots dx_n \\
+&amp;= ∫_\mathbf{x} T(x_1,x_2, \ldots, x_n) \frac{d}{d\theta} \prod_{i=1}^{n} f(x_i \mid \theta) \; dx_1dx_2 \ldots dx_n 
+\end{align*}
+\end{split}\]</div>
+<p>By the product rule for derivatives, <span class="math notranslate nohighlight">\(\displaystyle \frac{d}{d\theta} \prod_{i=1}^{n} f(x_i \mid \theta)\)</span> is the sum of <span class="math notranslate nohighlight">\(n\)</span> terms, of which term <span class="math notranslate nohighlight">\(k\)</span> is equal to</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+f'(x_k \mid \theta) \prod_{i\neq k} f(x_i \mid \theta) 
+&amp;= s(x_k, \theta) f(x_k \mid \theta) \prod_{i\neq k} f(x_i \mid \theta) \\
+&amp;= s(x_k, \theta) \prod_{i=1}^{n} f(x_i \mid \theta)
+\end{align*}
+\end{split}\]</div>
+<p>Plug this into our earlier equation to get</p>
+<div class="math notranslate nohighlight">
+\[
+1 ~ = ~ ∫_\mathbf{x} T(x_1,x_2, \ldots, x_n)\sum_{i=1}^{n} s(x_i,\theta)\prod_{i=1}^{n} f(x_i \mid \theta) \; dx_1dx_2 \ldots dx_n = E_\theta \left(T\sum_{i=1}^{n} s(X_i,\theta)\right) 
+= E_\theta(TW)
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(E_{\theta}(W) = 0\)</span>, we have</p>
+<div class="math notranslate nohighlight">
+\[
+1 = E_\theta(TW) = Cov_\theta(T,W)
+\]</div>
+<p>just as we had hoped. This establishes the Cramér-Rao bound.</p>
+</section>
+</section>
+<section id="part-2-modes-of-convergence">
+<h2>Part 2: Modes of Convergence<a class="headerlink" href="#part-2-modes-of-convergence" title="Link to this heading">#</a></h2>
+<p>Return to the last seminar, which ended with the important result that if <span class="math notranslate nohighlight">\(\hat{\theta}_n\)</span> is the MLE of a true numerical parameter <span class="math notranslate nohighlight">\(\theta_0\)</span>, then under some regularity conditions</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{n}(\hat{\theta}_n - \theta_0) \rightarrow \text{normal }\left(0, \frac{1}{I(\theta_0)}\right) ~~~~ \text{ as } n \to \infty
+\]</div>
+<p>We dervied this convergence informally by approximating <span class="math notranslate nohighlight">\(\sqrt{n}(\hat{\theta}_n - \theta_0)\)</span> by a ratio:</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{n}(\hat{\theta} - \theta_0) \approx \frac{\frac{1}{\sqrt{n}}L'(\theta_0)}{-\frac{1}{n}L''(\theta_0)} ~~~~~~ \text{for large } n
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(L\)</span> is the log likelihood function.</p>
+<p>We showed that the numerator goes to a normal due to the Central Limit Theroem, and the denominator goes to a constant by the Weak Law of Large Numbers. We then concluded that the ratio converges to the normal in the numerator scaled by the constant limit in the denomiator. Now we will make this more precise.</p>
+<p>First, we must discuss exactly what we mean by “convergence”. As you saw in Data 140, random variables have two kinds of equality: equality as functions and equality in distribution. So also sequences of random variables can converge in various senses, two of which we will examine in this seminar.</p>
+<section id="convergence-in-distribution">
+<h3>Convergence in Distribution<a class="headerlink" href="#convergence-in-distribution" title="Link to this heading">#</a></h3>
+<p>Consider random variables <span class="math notranslate nohighlight">\(X_1, X_2, ...\)</span> not necessarily defined on the same outcome space. Let the cdf of <span class="math notranslate nohighlight">\(X_n\)</span> be <span class="math notranslate nohighlight">\(F_n\)</span>. Let <span class="math notranslate nohighlight">\(X\)</span> be another random variable with cdf <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p><strong>Definition:</strong> <span class="math notranslate nohighlight">\(X_n\)</span> <em>converges in distribution</em> to <span class="math notranslate nohighlight">\(X\)</span> if <span class="math notranslate nohighlight">\(F_n(x) → F(x)\)</span>
+at all continuity points of the limit cdf <span class="math notranslate nohighlight">\(F\)</span>.</p>
+<p><strong>Notation:</strong> If <span class="math notranslate nohighlight">\(X_n\)</span> converges in distribution to <span class="math notranslate nohighlight">\(X\)</span> we will write <span class="math notranslate nohighlight">\(X_n \stackrel{d}{\rightarrow} X\)</span>.</p>
+<p>We will discuss the issue of continuity points shortly. For a start it is fine to focus on the following special case:</p>
+<p><strong>Continuous limit cdf:</strong> If the limit <span class="math notranslate nohighlight">\(F\)</span> is continuous, as in the case where the limit distribution is normal, then <span class="math notranslate nohighlight">\(X_n \stackrel{d}{\rightarrow} X\)</span> if <span class="math notranslate nohighlight">\(F_n(x) → F(x)\)</span> for all <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Convergence in distribution is a property of the cdf sequence alone. The spaces on which the random variables are defined as functions aren’t involved. The next example points out that convergence in distribution is a property of distributions and not of the random variables as functions.</p>
+<p><strong>Example:</strong> Let <span class="math notranslate nohighlight">\(Z\)</span> be standard normal. Take <span class="math notranslate nohighlight">\(X_n = Z\)</span> for all <span class="math notranslate nohighlight">\(n\)</span>, and let <span class="math notranslate nohighlight">\(X\)</span> be <span class="math notranslate nohighlight">\(-Z\)</span>. Then for each <span class="math notranslate nohighlight">\(n\)</span> we have <span class="math notranslate nohighlight">\(F_n = \Phi\)</span>, the standard normal cdf. Now the distribution of <span class="math notranslate nohighlight">\(X = -Z\)</span> is also standard normal, so <span class="math notranslate nohighlight">\(F = \Phi\)</span> as well. Therefore <span class="math notranslate nohighlight">\(X_n \stackrel{d}{\rightarrow} X\)</span>. That is, the sequence <span class="math notranslate nohighlight">\(Z, Z, Z, \dots\)</span> converges in distribution to <span class="math notranslate nohighlight">\(-Z\)</span>.</p>
+<section id="a-note-on-continuity-points">
+<h4>A Note on Continuity Points<a class="headerlink" href="#a-note-on-continuity-points" title="Link to this heading">#</a></h4>
+<p>Why must we only look at continuity points of the limit when determining convergence in distribution? Let’s take an example to see what the problem is.</p>
+<p>Consider the random variable <span class="math notranslate nohighlight">\(X_n\)</span> with distribution given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+X_n = 
+\begin{cases} 
+  \frac{1}{n} &amp; \text{with probability } 1-\frac{1}{n}\\
+  1 &amp; \text{with probability } \frac{1}{n}\\
+\end{cases}
+\end{split}\]</div>
+<p>For large <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(X_n\)</span> is close to <span class="math notranslate nohighlight">\(0\)</span> with high probability. So it’s reasonable to think of the constant <span class="math notranslate nohighlight">\(0\)</span> as the limit, or, to be consistent with our notation above, we would like to think of the limit as the random variable <span class="math notranslate nohighlight">\(X\)</span> where  <span class="math notranslate nohighlight">\(P(X=0) = 1\)</span>.</p>
+<p>Now look at the cdf sequence.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+F_n(x) = 
+\begin{cases}
+0 &amp; \text{for } x &lt; \frac{1}{n} \\
+1 - \frac{1}{n} &amp; \text{for } \frac{1}{n} \leq x &lt; 1 \\
+1 &amp; \text{for } x \geq 1
+\end{cases}
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+F(x) = 
+\begin{cases}
+0 &amp; \text{for } x &lt; 0 \\
+1 &amp; \text{for } x \geq 0
+\end{cases}
+\end{split}\]</div>
+<p>Draw the graphs of <span class="math notranslate nohighlight">\(F_n\)</span> and <span class="math notranslate nohighlight">\(F\)</span>. For <span class="math notranslate nohighlight">\(x &lt; 0\)</span>, we have <span class="math notranslate nohighlight">\(F_n(x) \to 0 = F(x)\)</span>, and for <span class="math notranslate nohighlight">\(x &gt; 0\)</span>, we have <span class="math notranslate nohighlight">\(F_n(x) \to 1 = F(x)\)</span>.</p>
+<p>The problem is at <span class="math notranslate nohighlight">\(x = 0\)</span>, which is the point at which the limit cdf <span class="math notranslate nohighlight">\(F\)</span> is discontinuous.
+This point is the only exception to the cdfs’ convergence.</p>
+<p>But it is still natural to want to say that <span class="math notranslate nohighlight">\(X_n\)</span> converges in distribution to <span class="math notranslate nohighlight">\(0\)</span>. So the definition chooses to ignore the discontinuity point of the limit, as requiring convergence there is asking too much.</p>
+</section>
+</section>
+<section id="convergence-in-probablility">
+<h3>Convergence in Probablility<a class="headerlink" href="#convergence-in-probablility" title="Link to this heading">#</a></h3>
+<p>Let <span class="math notranslate nohighlight">\(X_1, X_2, \ldots\)</span> and <span class="math notranslate nohighlight">\(X\)</span> be random variables defined on the same space.</p>
+<p><span class="math notranslate nohighlight">\(X_n\)</span> <em>converges in probability</em> to <span class="math notranslate nohighlight">\(X\)</span>, denoted <span class="math notranslate nohighlight">\(X_n \xrightarrow{P} X\)</span>, if for every <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span> we have <span class="math notranslate nohighlight">\(P(\vert X_n - X \vert &gt; \epsilon) \rightarrow 0\)</span>.</p>
+<p>This is the way in which the average of an i.i.d. sample converges to the population mean, as we saw in the Weak Law of Large Numbers in Data 140.</p>
+<p>It is a fact (that we won’t prove) that convergence in probability implies convergence in distribution. But convergence in distribution does not imply convergence in probability (see the example below). This is a reason why convergence in distribution is called <em>weak</em> convergence.</p>
+<p><strong>Example:</strong> As in our earlier example, let <span class="math notranslate nohighlight">\(X_n = Z\)</span> where <span class="math notranslate nohighlight">\(Z\)</span> is standard normal, and let <span class="math notranslate nohighlight">\(X = -Z\)</span>. We showed that <span class="math notranslate nohighlight">\(X_n \xrightarrow{d} X\)</span>. Now <span class="math notranslate nohighlight">\(\vert X_n - X \vert = 2\vert Z \vert\)</span>, and for <span class="math notranslate nohighlight">\(\epsilon = 2\)</span> we have <span class="math notranslate nohighlight">\(P(\vert X_n - X \vert &gt; \epsilon) = P(\vert Z \vert &gt; 1) \approx 0.32 \neq 0\)</span>.</p>
+</section>
+<section id="useful-properties-of-convergence">
+<h3>Useful Properties of Convergence<a class="headerlink" href="#useful-properties-of-convergence" title="Link to this heading">#</a></h3>
+<p><strong>1. The Continuous Mapping Theorem</strong> (We won’t prove this one.)</p>
+<p>Let <span class="math notranslate nohighlight">\(g\)</span> be a continuous function. Then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+X_n \xrightarrow{d} X &amp;\implies g(X_n) \xrightarrow{d} g(X)\\
+X_n \xrightarrow{P} X &amp;\implies g(X_n) \xrightarrow{P} g(X)
+\end{align*}
+\end{split}\]</div>
+<p><strong>2. Sums</strong> (You will prove this one in section.)</p>
+<div class="math notranslate nohighlight">
+\[
+X_n \xrightarrow{P} X, Y_n \xrightarrow{P} Y \implies X_n + Y_n \xrightarrow{P} X + Y
+\]</div>
+<p>An example shows that this result doesn’t hold if you replace convergence in probability by convergence in distribution. Inspired by our earlier examples, take <span class="math notranslate nohighlight">\(X_n = Y_n = Z\)</span> where <span class="math notranslate nohighlight">\(Z\)</span> is standard normal. Take <span class="math notranslate nohighlight">\(X = Z\)</span> and <span class="math notranslate nohighlight">\(Y = -Z\)</span>. Then <span class="math notranslate nohighlight">\(X_n \xrightarrow{d} X\)</span> and <span class="math notranslate nohighlight">\(Y_n \xrightarrow{d} Y\)</span>. Since <span class="math notranslate nohighlight">\(X_n + Y_n = 2Z\)</span> for every <span class="math notranslate nohighlight">\(n\)</span> whereas <span class="math notranslate nohighlight">\(X+Y = 0\)</span>, we see that <span class="math notranslate nohighlight">\(X_n + Y_n\)</span> does not converge in distribution to <span class="math notranslate nohighlight">\(X+Y\)</span>.</p>
+<p><strong>3. Slutsky’s Theorem</strong> (We won’t prove this one.)</p>
+<p>Let <span class="math notranslate nohighlight">\(c\)</span> be a constant. Then</p>
+<div class="math notranslate nohighlight">
+\[
+X_n \xrightarrow{d} X, Y_n \xrightarrow{P} c \implies X_nY_n \xrightarrow{d} cX
+\]</div>
+<p>Using the Continuous Mapping Theorem and Slutsky’s Theorem, we can now explain the convergence of the distribution of the MLE. We have</p>
+<div class="math notranslate nohighlight">
+\[
+\sqrt{n}(\hat{\theta} - \theta_0) \approx \frac{\frac{1}{\sqrt{n}}L'(\theta_0)}{-\frac{1}{n}L''(\theta_0)}
+\]</div>
+<p>Call the numerator <span class="math notranslate nohighlight">\(S_n\)</span>. As we saw in the previous seminar, the CLT implies that the numerator <span class="math notranslate nohighlight">\(S_n\)</span> converges in distribution to a normal <span class="math notranslate nohighlight">\((0, I(\theta_0))\)</span> random variable.</p>
+<p>Recall that the denominator converges to the constant <span class="math notranslate nohighlight">\(I(\theta_0)\)</span> in probability, by the WLLN. By the continuous mapping theorem, with <span class="math notranslate nohighlight">\(g(x) = \frac{1}{x}\)</span>, we obtain a new random variable sequence <span class="math notranslate nohighlight">\(T_n = g(-\frac{1}{n}L''(\theta_0))\)</span> that converges in probability to <span class="math notranslate nohighlight">\(\frac{1}{I(\theta_0)}\)</span>.</p>
+<p>Now, we can write the ratio <span class="math notranslate nohighlight">\(\sqrt{n}(\hat{\theta} - \theta_0)\)</span> as the product <span class="math notranslate nohighlight">\(S_nT_n\)</span>. We can apply Slutsky’s Theorem to show that this product converges in distribution to the  normal <span class="math notranslate nohighlight">\((0, I(\theta_0))\)</span> random variable times <span class="math notranslate nohighlight">\(\frac{1}{I(\theta_0)}\)</span>, which is normal <span class="math notranslate nohighlight">\((0, \frac{1}{I(\theta_0)})\)</span>.</p>
+<p>This method of writing a random sequence as a ratio where the numerator converges in distribution and the denominator converges in probability to a constant is a standard way of establishing convergence in distribution and identifying the limit. The worksheet contains more examples of using the method.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/Chapter_01"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Data 188, Spring 2024</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#week-3-seminar-notes">Week 3 Seminar Notes</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-adhikari">A. Adhikari</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-1-efficiency-and-the-cramer-rao-bound">Part 1: Efficiency and the Cramér-Rao Bound</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#proof-of-the-cramer-rao-bound">Proof of the Cramér-Rao Bound</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#part-2-modes-of-convergence">Part 2: Modes of Convergence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-distribution">Convergence in Distribution</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-note-on-continuity-points">A Note on Continuity Points</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#convergence-in-probablility">Convergence in Probablility</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#useful-properties-of-convergence">Useful Properties of Convergence</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Ani Adhikari
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

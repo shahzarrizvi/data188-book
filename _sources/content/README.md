@@ -1,7 +1,7 @@
 # Data 188
 
 -------------------------------
-**By [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari)
+**By [Ani Adhikari](http://statistics.berkeley.edu/people/ani-adhikari)**
 
 This is the textbook for the Data 188 class at UC Berkeley.
 
